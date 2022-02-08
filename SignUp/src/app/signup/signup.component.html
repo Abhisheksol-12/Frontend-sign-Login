@@ -1,0 +1,50 @@
+
+<div>
+    <mat-card>  
+        <h1 fxLayoutAlign="center center" class="main-div" >Welcome To Our Website </h1>     
+    </mat-card>
+</div>
+
+
+<div fxLayoutAlign="center center" fxFill class="main-div" >
+
+    <!-- <mat-card> </mat-card> -->
+
+    <mat-card fxFlex="30" > 
+
+        <mat-toolbar fxLayoutAlign="center center"  color="primary"> SignUp</mat-toolbar>
+
+        <form fxLayoutAlign="stretch" fxLayout="column" class="mytask" >
+
+            <mat-form-field appearance="fill">
+              <mat-label>Username</mat-label>
+              <input matInput type="text" placeholder="Enter-Name" value="">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>User Email-id </mat-label>
+              <input matInput type="email" placeholder="Enter-Id" value="">
+            </mat-form-field>
+          
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput type="password"  placeholder="Enter-Password" value="">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Re-Password</mat-label>
+              <input matInput type="password" placeholder="Enter-Password-Again" value="">
+            </mat-form-field>
+
+        
+          </form>
+          <div class="text-center">
+              <button mat-raised-button type="submit" class="btn btn-primary btn-success" >Submit</button>
+          </div>
+
+        
+              <p id="para">Don't have an account? Sign Up</p>
+
+    </mat-card>
+
+</div>

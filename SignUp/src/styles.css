@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mytask{
+    border: 4px solid black;
+    border-radius: 10px;
+    margin: 7px;
+    padding: 13px;
+}
+
+.main-div mat-card{
+    padding: 4px;
+    border-radius:  15px;
+}
+
+.main-div mat-toolbar{
+
+    margin: 0px;
+    border-radius: 15px;
+}

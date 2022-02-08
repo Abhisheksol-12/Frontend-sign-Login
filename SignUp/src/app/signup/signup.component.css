@@ -1,0 +1,14 @@
+#para{
+    color: #0e83f0;
+    margin: 4px;
+    display: block;
+    text-align: center;
+    justify-content:center ;
+}
+
+.main-div{
+    margin: 10px;
+    padding: 5px;
+    color:black;
+    font-weight: bolder;
+}
