@@ -1,0 +1,24 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.main-div{
+    margin: 10px;
+    padding: 5px;
+    color:black;
+    font-weight: bolder;
+	border: 20px;
+}
+.login-form{
+	padding: 20px;
+}
+#para{
+    color: #f00ef0;
+    margin: 4px;
+    display: block;
+    text-align: center;
+    justify-content:center ;
+}
+.form{
+	margin: 20px;
+	border-color: #f00ef0;
+	border-width: 5px;
+	
+}
