@@ -4,21 +4,45 @@
     padding: 5px;
     color:black;
     font-weight: bolder;
+	background: url(C:\Users\khushi.pundir\Desktop\Frontend-sign-Login-master\SignUp\src\assets\bg.png) no-repeat;
 	border: 20px;
+	background-size: cover;
+	
+	opacity: 0.6;
+	font-family: sans-serif;
 }
 .login-form{
 	padding: 20px;
+	font-family: sans-serif;
+	
 }
 #para{
-    color: #f00ef0;
+    color: #8A39E1;
     margin: 4px;
     display: block;
     text-align: center;
     justify-content:center ;
+	font-family: sans-serif;
 }
 .form{
 	margin: 20px;
 	border-color: #f00ef0;
-	border-width: 5px;
+	border-width: 10px solid;
+
 	
+}
+#login-head{
+background-color: #8A39E1;
+}
+#button{
+	background-color: #270082;
+	color: aliceblue;
+}
+#text-box{
+	border-color: #270082;
+	border-width: 10px;
+	color: aliceblue;
+	color: white;
+  font-size: 18px;
+  width: 80%;
 }
