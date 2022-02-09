@@ -12,3 +12,21 @@
     color:black;
     font-weight: bolder;
 }
+
+
+.img{
+
+    background-image: url('\Users\abhishek.solanki\Desktop\Frontend\SignUp\src\assets\images\backimage.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    /* width: 100vw; */
+    opacity: .6px;
+    /* position: relative; */
+
+}
+
+a:link{
+    text-decoration: none;
+    text-align: center;
+}
