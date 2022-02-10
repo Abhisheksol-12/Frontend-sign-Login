@@ -4,16 +4,17 @@
     padding: 5px;
     color:black;
     font-weight: bolder;
-	background: url(C:\Users\khushi.pundir\Desktop\Frontend-sign-Login-master\SignUp\src\assets\bg.png) no-repeat;
+	background: url(\Users\abhishek.solanki\Documents\GitHub\Frontend-sign-Login\SignUp\src\assets\bg.png) no-repeat;
 	border: 20px;
 	background-size: cover;
 	
-	opacity: 0.6;
+	opacity: 0.8;
 	font-family: sans-serif;
 }
 .login-form{
 	padding: 20px;
 	font-family: sans-serif;
+	color: black;
 	
 }
 #para{
@@ -38,6 +39,11 @@ background-color: #8A39E1;
 	background-color: #270082;
 	color: aliceblue;
 }
+
+a:link{
+	text-decoration: none;
+}
+
 #text-box{
 	border-color: #270082;
 	border-width: 10px;

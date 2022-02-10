@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -23,6 +24,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     SignupComponent,
     DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

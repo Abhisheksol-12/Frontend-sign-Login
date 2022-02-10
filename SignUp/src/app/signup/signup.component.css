@@ -1,5 +1,5 @@
 #para{
-    color: #0e83f0;
+    color: #8A39E1;
     margin: 4px;
     display: block;
     text-align: center;
@@ -15,15 +15,10 @@
 
 
 .img{
-
-    /* background-image: url(''); */
-    background-image: url(\Users\abhishek.solanki\Documents\GitHub\Frontend-sign-Login\SignUp\src\assets\bg.png);
-  
+    background-image: url(\Users\abhishek.solanki\Documents\GitHub\Frontend-sign-Login\SignUp\src\assets\bg.png);  
     background-size: cover;
     height: 100%;
-    opacity: .6px;
-  
-
+    opacity: 0.8;
 }
 
 a:link{
