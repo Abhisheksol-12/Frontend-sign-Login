@@ -16,13 +16,13 @@
 
 .img{
 
-    background-image: url('\Users\abhishek.solanki\Desktop\Frontend\SignUp\src\assets\images\backimage.jpeg');
+    /* background-image: url(''); */
+    background-image: url(\Users\abhishek.solanki\Documents\GitHub\Frontend-sign-Login\SignUp\src\assets\bg.png);
+  
     background-size: cover;
-    background-repeat: no-repeat;
     height: 100%;
-    /* width: 100vw; */
     opacity: .6px;
-    /* position: relative; */
+  
 
 }
 
