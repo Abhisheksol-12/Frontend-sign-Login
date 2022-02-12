@@ -1,7 +1,9 @@
+
 :host{
     display: flex;
     flex-direction: column;
     height: 100%;
+  
 }
 
 mat-drawer{
@@ -19,12 +21,11 @@ mat-drawer-container{
 .content{
     /* padding: 5px; */
     margin-top: 5px;
-    height: 350px;
-    width:  100%;
+    height: 500px;
+    width:  450px;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     flex-wrap: wrap;
-   
     
 }
 
@@ -40,10 +41,4 @@ mat-card{
     border: 3px soild black;
     
 }
-
-mat-card-header{
-    border: 3px soild black;
-
-}
-
 
