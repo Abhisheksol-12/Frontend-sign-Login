@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  sideBarOpen: any;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
+  }
+
+  fun()
+  {
+    alert("Thankyou for like..")
   }
 
 }

@@ -1,0 +1,49 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-drawer{
+    width: 260px;
+    background: rgb(255, 255, 255);
+    /* background-color: white; */
+    
+}
+
+mat-drawer-container{
+    height: 100%;
+}
+
+
+.content{
+    /* padding: 5px; */
+    margin-top: 5px;
+    height: 350px;
+    width:  100%;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+   
+    
+}
+
+p {
+    padding: 10px;
+}
+
+mat-card{
+    padding: 5px;
+    margin: 5px;
+    background-color: grey;
+    opacity: .8;
+    border: 3px soild black;
+    
+}
+
+mat-card-header{
+    border: 3px soild black;
+
+}
+
+

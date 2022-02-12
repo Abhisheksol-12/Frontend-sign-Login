@@ -1,0 +1,17 @@
+.page{
+    color: black;
+    padding: 0 1rem;
+    /* background-color: aqua; */
+
+}
+
+.page__box{
+    min-height: 100px;
+    position: static;
+    background: rgb(67, 70, 73);
+    margin: 0 -1rem;
+    font-size: 35px;
+}
+
+
+
