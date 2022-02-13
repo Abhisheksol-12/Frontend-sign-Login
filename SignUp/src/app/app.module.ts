@@ -14,6 +14,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule} from '@angular/material/core';
+import { CreateTaskDashboardComponent } from './create-task-dashboard/create-task-dashboard.component'
+import { MatStepperModule } from '@angular/material/stepper';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+
 
 
 
@@ -24,7 +34,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     SignupComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    CreateTaskDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +47,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DragDropModule,
+    MatIconModule,
+    MatDividerModule,
+    ScrollingModule,
     
   ],
   providers: [],
