@@ -58,6 +58,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     ScrollingModule,
     
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,52 @@
+
+.logo{ 
+    text-align: center;
+    padding: 1px;
+}
+
+.logo img { 
+    height: 100%;
+    width: 100%;
+    /* opacity:; */
+    background-size: cover;
+}
+
+.mat-icon{
+    vertical-align: center;
+    margin-right: 1rem;
+}
+
+.mat-divider{
+    border-top-width: 2px;
+    border-color: yellow;
+}
+
+.mat-list-item{
+    color:rgb(2, 44, 44) !important;
+    font-size: 1rem;
+    /* font-weight: bolder; */
+    height: 40px !important;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    margin: 0 8px;
+
+}
+
+a :hover{
+    background:rgb(6, 5, 78)  !important;
+}
+
+.list-item-active
+{
+
+    color: #f2f5f7 !important;
+
+}
+
+.mat-subheader{
+    text-align: center;
+    color: rgb(5, 58, 117);
+    font-size: 1.3rem;
+    font-weight:bold;
+    letter-spacing: 1px;
+}

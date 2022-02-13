@@ -9,7 +9,7 @@ import { CreateTaskDashboardComponent } from './create-task-dashboard/create-tas
 const routes: Routes = [
 
  { path:'signup', component:SignupComponent},
- { path:'', redirectTo: '/login' , pathMatch:'full'},
+ { path:'', redirectTo: '/dashboard' , pathMatch:'full'},
  { path:'login', component:LoginComponent},
  { path:'dashboard', component:DashboardComponent},
  { path:'createTaskDash', component:CreateTaskDashboardComponent},
