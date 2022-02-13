@@ -17,6 +17,7 @@ const routes: Routes = [
  { path:'header', component:HeaderComponent},
  { path:'home', component:HomeComponent},
  { path:'sidenav', component:SidenavComponent},
+ //{ path:'view', component:ViewTaskComponent},
  
 
   
