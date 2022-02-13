@@ -24,6 +24,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { Dashboard1Component } from './dashboard1/dashboard1.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { ViewTaskComponent } from './view-task/view-task.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     SidenavComponent,
     HomeComponent,
     Dashboard1Component,
+    ViewTaskComponent,
   
   ],
   imports: [
