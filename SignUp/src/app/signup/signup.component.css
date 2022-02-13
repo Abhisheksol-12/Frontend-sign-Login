@@ -15,7 +15,7 @@
 
 
 .img{
-    background-image: url(\Users\nishant.saini\Documents\GitHub\Frontend-sign-Login\SignUp\src\assets\bg.png);  
+    background-image: url("../../assets/bg.png");  
     background-size: cover;
     height: 100%;
     opacity: 0.8;

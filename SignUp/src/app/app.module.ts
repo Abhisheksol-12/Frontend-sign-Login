@@ -23,6 +23,17 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { HeaderComponent } from './header/header.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { HomeComponent } from './home/home.component';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
+
+
+
+
+
 
 
 
@@ -32,7 +43,13 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     SignupComponent,
     DashboardComponent,
     LoginComponent,
-    CreateTaskDashboardComponent
+    CreateTaskDashboardComponent,
+    HeaderComponent,
+    SidenavComponent,
+    HomeComponent
+    
+
+
   ],
   imports: [
     BrowserModule,
@@ -53,6 +70,10 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     MatIconModule,
     MatDividerModule,
     ScrollingModule,
+    MatListModule,
+    MatSidenavModule,
+    MatMenuModule
+  
     
   ],
 
