@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { ViewTaskComponent } from './view-task/view-task.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
  { path:'header', component:HeaderComponent},
  { path:'home', component:HomeComponent},
  { path:'sidenav', component:SidenavComponent},
- //{ path:'view', component:ViewTaskComponent},
+ {path:'view-task',component:ViewTaskComponent}
  
 
   
