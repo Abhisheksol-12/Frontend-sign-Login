@@ -37,6 +37,7 @@ import {MatMenuModule} from '@angular/material/menu';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
     MatCardModule,
     MatToolbarModule,
     MatDatepickerModule,
@@ -67,15 +69,17 @@ import {MatMenuModule} from '@angular/material/menu';
     FormsModule,
     ReactiveFormsModule,
     DragDropModule,
-    MatIconModule,
+    
     MatDividerModule,
     ScrollingModule,
     MatListModule,
     MatSidenavModule,
-    MatMenuModule
+    MatMenuModule,
+    
   
     
   ],
+  
 
   providers: [],
   bootstrap: [AppComponent]
