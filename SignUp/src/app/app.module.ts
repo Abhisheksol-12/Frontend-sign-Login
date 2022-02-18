@@ -38,6 +38,7 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
     MatCardModule,
     MatToolbarModule,
     MatDatepickerModule,
@@ -69,15 +71,17 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
     FormsModule,
     ReactiveFormsModule,
     DragDropModule,
-    MatIconModule,
+    
     MatDividerModule,
     ScrollingModule,
     MatListModule,
     MatSidenavModule,
-    MatMenuModule
+    MatMenuModule,
+    
   
     
   ],
+  
 
   providers: [],
   bootstrap: [AppComponent]
