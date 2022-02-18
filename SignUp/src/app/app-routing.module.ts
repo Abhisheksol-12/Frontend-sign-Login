@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateTaskDashboardComponent } from './create-task-dashboard/create-task-dashboard.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
+import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,8 @@ const routes: Routes = [
  { path:'create-task-dashboard', component:CreateTaskDashboardComponent},
  { path:'aboutpage', component:AboutpageComponent},
  { path:'view-task', component:ViewTaskComponent},
+ { path:'view-meeting', component:ViewMeetingComponent},
+
  
 
   

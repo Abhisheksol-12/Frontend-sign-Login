@@ -1,0 +1,40 @@
+.btn{
+    margin: 3px;
+    border-radius: 3px;
+  }
+  .container{
+      font-family:sans-serif;
+      margin-top: 12px;
+  }
+  .table-striped{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    color: #270082;
+    min-width: 400px;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(139, 157, 235, 0.4);
+    background-color: #E8F6EF;
+    
+
+  }
+  
+  .table-heading{
+      text-align: center;
+      color: #041C32;
+  }
+  .table-text{
+      text-align: center;
+      text-decoration: solid;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .icon-btn{
+      color: blue;
+  }
+  .btn-outline-danger{
+      margin-left: 25cm;
+      margin-top: 20px;
+      padding:5px;
+      box-shadow: rgba(197, 24, 24, 0.5);
+  }

@@ -30,6 +30,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
+import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
 
 
 
@@ -49,7 +50,8 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
     HeaderComponent,
     SidenavComponent,
     HomeComponent,
-    AboutpageComponent
+    AboutpageComponent,
+    ViewMeetingComponent
     
 
 
