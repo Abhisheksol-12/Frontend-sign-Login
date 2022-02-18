@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateTaskDashboardComponent } from './create-task-dashboard/create-task-dashboard.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
+import { ViewTaskComponent } from './view-task/view-task.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
  { path:'dashboard', component:DashboardComponent},
  { path:'create-task-dashboard', component:CreateTaskDashboardComponent},
  { path:'aboutpage', component:AboutpageComponent},
+ { path:'view-task', component:ViewTaskComponent},
  
 
   
