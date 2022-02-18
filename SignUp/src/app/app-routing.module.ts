@@ -4,6 +4,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateTaskDashboardComponent } from './create-task-dashboard/create-task-dashboard.component';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
  { path:'login', component:LoginComponent},
  { path:'dashboard', component:DashboardComponent},
  { path:'create-task-dashboard', component:CreateTaskDashboardComponent},
+ { path:'aboutpage', component:AboutpageComponent},
  
   
 ];

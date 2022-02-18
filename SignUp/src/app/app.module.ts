@@ -29,6 +29,7 @@ import { HomeComponent } from './home/home.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
 
 
 
@@ -46,7 +47,8 @@ import {MatMenuModule} from '@angular/material/menu';
     CreateTaskDashboardComponent,
     HeaderComponent,
     SidenavComponent,
-    HomeComponent
+    HomeComponent,
+    AboutpageComponent
     
 
 
