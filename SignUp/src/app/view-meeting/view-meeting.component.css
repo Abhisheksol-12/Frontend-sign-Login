@@ -32,3 +32,9 @@
   .icon-btn{
       color: blue;
   }
+  .btn-outline-danger{
+      margin-left: 25cm;
+      margin-top: 20px;
+      padding:5px;
+      box-shadow: rgba(197, 24, 24, 0.5);
+  }

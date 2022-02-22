@@ -34,6 +34,11 @@ import { FilterPeoplePipe } from './Pipes/filter-people.pipe';
 import { AddPeopleComponent } from './add-people/add-people.component';
 import { CreateMeetingDashboardComponent } from './create-meeting-dashboard/create-meeting-dashboard.component';
 //import { AuthInterceptor } from './services/auth.interceptor';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
+import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
+import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
+
+
 
 
 
@@ -56,6 +61,10 @@ import { CreateMeetingDashboardComponent } from './create-meeting-dashboard/crea
     AddPeopleComponent,
     CreateMeetingDashboardComponent,
     
+    AboutpageComponent,
+    ViewMeetingComponent,
+    CreatemeetingComponent,    
+
   ],
   imports: [
     BrowserModule,
@@ -65,6 +74,7 @@ import { CreateMeetingDashboardComponent } from './create-meeting-dashboard/crea
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
     MatCardModule,
     MatToolbarModule,
     MatDatepickerModule,
@@ -73,7 +83,7 @@ import { CreateMeetingDashboardComponent } from './create-meeting-dashboard/crea
     FormsModule,
     ReactiveFormsModule,
     DragDropModule,
-    MatIconModule,
+    
     MatDividerModule,
     ScrollingModule,
     MatListModule,
@@ -83,6 +93,7 @@ import { CreateMeetingDashboardComponent } from './create-meeting-dashboard/crea
   
     
   ],
+  
 
   providers: [],//[[{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}]],
   bootstrap: [AppComponent]

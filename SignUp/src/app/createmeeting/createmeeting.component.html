@@ -1,0 +1,152 @@
+<div class="container" text-center>
+    <mat-card class="card">
+        <mat-stepper labelPosition="bottom" #stepper>
+            <mat-step [stepControl]="TaskFormGroup">
+
+                <form [formGroup]="TaskFormGroup" class="text-center">
+                    <ng-template matStepLabel>Create Task</ng-template>
+
+                    <div class="row">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Task Title</mat-label>
+                            <input matInput type="text" placeholder="Enter Task Name" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Instructions</mat-label>
+                            <input matInput type="text" placeholder="Enter Instructions">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field class="half-width" style="margin-right: 10px;" color="accent"
+                                appearance="fill">
+                                <mat-label>Start Date</mat-label>
+                                <input matInput [matDatepicker]="picker1">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-form-field class="half-width" appearance="fill">
+                                <mat-label>start time</mat-label>
+                                <input matInput type="time" placeholder="Enter start time">
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+
+                            <mat-form-field class="half-width" style="margin-right: 10px;" color="accent"
+                                appearance="fill">
+                                <mat-label>Due Date</mat-label>
+                                <input matInput [matDatepicker]="picker2">
+                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-form-field class="half-width" appearance="fill">
+                                <mat-label>due time</mat-label>
+                                <input matInput type="time" placeholder="Enter due time">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Discription</mat-label>
+                            <input matInput type="text" placeholder="Enter Discription">
+                        </mat-form-field>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <button mat-raised-button color="primary">Create</button>
+                        </div>
+                        <div class="col">
+                            <button mat-raised-button matStepperNext>Next</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+
+
+            <mat-step [stepControl]="addPropleFormGroup">
+
+                <form [formGroup]="TaskFormGroup" class="text-center">
+                    <ng-template matStepLabel>Add People</ng-template>
+
+
+                    <div class="row" cdkDropListGroup>
+                        <div class="col">
+                            <mat-card class="userlist">
+                                <h2>Invite People</h2>
+                                <div >
+                                    <mat-form-field class = "searchbar" appearance="outline">
+                                        <mat-label>Search Here</mat-label>
+                                        <input matInput type="search" placeholder="Enter Name">
+                                        <mat-icon matSuffix>search</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                                <mat-divider></mat-divider>
+                                
+                                <div class="example-container">
+                                    <div cdkDropList [cdkDropListData]="todo" class="example-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </div>
+                        <div class="col">
+                            <mat-card class="userlist">
+                                <h2>Selected People</h2>
+                                <div >
+                                    <mat-form-field class = "searchbar" appearance="outline">
+                                        <mat-label>Search Here</mat-label>
+                                        <input matInput type="search" placeholder="Enter Name">
+                                        <mat-icon matSuffix>search</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                                <div class="example-container">
+                                    <div cdkDropList [cdkDropListData]="done" class="example-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 25px;">
+                        <div class="col">
+                            <button mat-raised-button matStepperPrevious>Previous</button>
+                        </div>
+                        <div class="col">
+                            <button mat-raised-button color="primary">Add</button>
+                        </div>
+                        <div class="col">
+                            <button mat-raised-button matStepperNext>Next</button>
+                        </div>
+                        
+                    </div>
+
+                </form>
+            </mat-step>
+            
+            <mat-step>
+                <ng-template matStepLabel>Done</ng-template>
+                <div fxLayoutAlign="center center">  
+                <div class="row">You are now done.</div> 
+                <div>
+                  <button  mat-button matStepperPrevious>Back</button>
+                  <button mat-button (click)="stepper.reset()">Reset</button>
+                </div>
+
+            </div>
+              </mat-step>
+        </mat-stepper>
+    </mat-card>
+</div>

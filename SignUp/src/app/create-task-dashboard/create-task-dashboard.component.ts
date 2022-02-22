@@ -30,6 +30,7 @@ export class CreateTaskDashboardComponent implements OnInit {
     const tasktit = this.TaskFormGroup.controls['taskTitle'].value;
     console.log(tasktit);
   }
+  
 }
 
 
