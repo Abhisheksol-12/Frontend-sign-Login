@@ -29,11 +29,20 @@ import { HomeComponent } from './home/home.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FilterPeoplePipe } from './Pipes/filter-people.pipe';
+import { AddPeopleComponent } from './add-people/add-people.component';
+import { CreateMeetingDashboardComponent } from './create-meeting-dashboard/create-meeting-dashboard.component';
+//import { AuthInterceptor } from './services/auth.interceptor';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
+<<<<<<< HEAD
 import { ShowTaskComponent } from './show-task/show-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
 import {MatDialogModule} from '@angular/material/dialog';
+=======
+import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
+>>>>>>> 2c51e302fc896ed2985aab5623167341bcb1b1e7
 
 
 
@@ -54,12 +63,20 @@ import {MatDialogModule} from '@angular/material/dialog';
     HeaderComponent,
     SidenavComponent,
     HomeComponent,
+<<<<<<< HEAD
     AboutpageComponent,
     ViewMeetingComponent,
     ShowTaskComponent,
     UpdateTaskComponent
+=======
+    FilterPeoplePipe,
+    AddPeopleComponent,
+    CreateMeetingDashboardComponent,
+>>>>>>> 2c51e302fc896ed2985aab5623167341bcb1b1e7
     
-
+    AboutpageComponent,
+    ViewMeetingComponent,
+    CreatemeetingComponent,    
 
   ],
   imports: [
@@ -85,14 +102,18 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatListModule,
     MatSidenavModule,
     MatMenuModule,
+<<<<<<< HEAD
     MatDialogModule
     
+=======
+    HttpClientModule
+>>>>>>> 2c51e302fc896ed2985aab5623167341bcb1b1e7
   
     
   ],
   
 
-  providers: [],
+  providers: [],//[[{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

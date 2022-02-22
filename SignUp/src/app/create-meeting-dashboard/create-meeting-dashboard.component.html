@@ -4,18 +4,24 @@
             <mat-step [stepControl]="TaskFormGroup">
 
                 <form [formGroup]="TaskFormGroup" class="text-center" (ngSubmit)="onCreate()">
-                    <ng-template matStepLabel>Create Task</ng-template>
+                    <ng-template matStepLabel>Create Meeting</ng-template>
 
                     <div class="form-group" class="row">
                         <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Task Title</mat-label>
-                            <input matInput type="text" placeholder="Enter Task Name" formControlName="taskTitle" required>
+                            <mat-label>Meeting Title</mat-label>
+                            <input matInput type="text" placeholder="Enter Meeting Name" formControlName="taskTitle" required>
                         </mat-form-field>
                     </div>
                     <div class="form-group" class="row">
                         <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Instructions</mat-label>
-                            <input matInput type="text" placeholder="Enter Instructions" formControlName="instructions" >
+                            <mat-label>Purpose</mat-label>
+                            <input matInput type="text" placeholder="Enter Purpose of Meeting" formControlName="purpose" >
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group" class="row">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Place</mat-label>
+                            <input matInput type="Address" placeholder="Enter Place" formControlName="place" >
                         </mat-form-field>
                     </div>
 

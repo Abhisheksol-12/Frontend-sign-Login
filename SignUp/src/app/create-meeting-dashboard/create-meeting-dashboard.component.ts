@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-
 @Component({
-  selector: 'app-create-task-dashboard',
-  templateUrl: './create-task-dashboard.component.html',
-  styleUrls: ['./create-task-dashboard.component.css']
+  selector: 'app-create-meeting-dashboard',
+  templateUrl: './create-meeting-dashboard.component.html',
+  styleUrls: ['./create-meeting-dashboard.component.css']
 })
-export class CreateTaskDashboardComponent implements OnInit {
+export class CreateMeetingDashboardComponent implements OnInit {
 
   TaskFormGroup:any | FormGroup;
   constructor(private _formBuilder: FormBuilder) {}
@@ -15,7 +14,8 @@ export class CreateTaskDashboardComponent implements OnInit {
   ngOnInit() {
     this.TaskFormGroup = this._formBuilder.group({
       taskTitle:['',Validators.required],
-      instructions:['',],
+      purpose:['',],
+      place:['',],
       startDate:['',Validators.required],
       startTime:['',Validators.required],
       dueDate:['',Validators.required],
@@ -30,7 +30,5 @@ export class CreateTaskDashboardComponent implements OnInit {
     const tasktit = this.TaskFormGroup.controls['taskTitle'].value;
     console.log(tasktit);
   }
-  
+
 }
-
-

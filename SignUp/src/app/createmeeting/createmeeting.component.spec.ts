@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Dashboard1Component } from './dashboard1.component';
+import { CreatemeetingComponent } from './createmeeting.component';
 
-describe('Dashboard1Component', () => {
-  let component: Dashboard1Component;
-  let fixture: ComponentFixture<Dashboard1Component>;
+describe('CreatemeetingComponent', () => {
+  let component: CreatemeetingComponent;
+  let fixture: ComponentFixture<CreatemeetingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Dashboard1Component ]
+      declarations: [ CreatemeetingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Dashboard1Component);
+    fixture = TestBed.createComponent(CreatemeetingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,4 +22,5 @@ describe('Dashboard1Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });
