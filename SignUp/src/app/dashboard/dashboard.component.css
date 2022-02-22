@@ -34,12 +34,41 @@ p {
     padding: 10px;
 }
 
-mat-card{
-    padding: 5px;
-    margin: 5px;
-    background-color: grey;
-    opacity: .8;
-    border: 3px soild black;
-    
+/* */
+
+*{
+    margin: 0 ; padding: 0; 
+    box-sizing: border-box;
+    /* background: red; */
 }
 
+main{
+    width: 90%;
+    height: 100%;
+    margin: 50px auto;
+    padding: 10px;
+    border: 1px solid black;
+    display: grid ; color: black;
+    grid-template-rows: 350px 350px 350px 350px ;
+    grid-template-columns: repeat(2 , 1fr) ;
+    grid-gap: 12px;
+}
+
+.div1{
+    background-color: yellow;
+    
+    /* grid-column: 1; */
+}
+
+.div2{
+  
+    background-color: yellow;
+}
+
+.div3{
+    background-color: yellow;
+}
+
+.div4{
+    background-color: yellow;
+}
