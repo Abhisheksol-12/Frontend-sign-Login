@@ -9,12 +9,9 @@ import { CreateMeetingDashboardComponent } from './create-meeting-dashboard/crea
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
 import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
-<<<<<<< HEAD
 import { ShowTaskComponent } from './show-task/show-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
-=======
 import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
->>>>>>> 2c51e302fc896ed2985aab5623167341bcb1b1e7
 
 
 const routes: Routes = [
@@ -31,7 +28,6 @@ const routes: Routes = [
  { path:'aboutpage', component:AboutpageComponent},
  { path:'view-task', component:ViewTaskComponent},
  { path:'view-meeting', component:ViewMeetingComponent},
-<<<<<<< HEAD
  { path:'show-task', component:ShowTaskComponent},
  { path:'update-task', component:UpdateTaskComponent},
 
@@ -40,9 +36,7 @@ const routes: Routes = [
  
 
   
-=======
  {path: 'createmeeting', component:CreatemeetingComponent },  
->>>>>>> 2c51e302fc896ed2985aab5623167341bcb1b1e7
 ];
 
 @NgModule({

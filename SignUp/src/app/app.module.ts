@@ -36,13 +36,10 @@ import { CreateMeetingDashboardComponent } from './create-meeting-dashboard/crea
 //import { AuthInterceptor } from './services/auth.interceptor';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
-<<<<<<< HEAD
 import { ShowTaskComponent } from './show-task/show-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
 import {MatDialogModule} from '@angular/material/dialog';
-=======
 import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
->>>>>>> 2c51e302fc896ed2985aab5623167341bcb1b1e7
 
 
 
@@ -63,16 +60,13 @@ import { CreatemeetingComponent } from './createmeeting/createmeeting.component'
     HeaderComponent,
     SidenavComponent,
     HomeComponent,
-<<<<<<< HEAD
     AboutpageComponent,
     ViewMeetingComponent,
     ShowTaskComponent,
-    UpdateTaskComponent
-=======
+    UpdateTaskComponent,
     FilterPeoplePipe,
     AddPeopleComponent,
     CreateMeetingDashboardComponent,
->>>>>>> 2c51e302fc896ed2985aab5623167341bcb1b1e7
     
     AboutpageComponent,
     ViewMeetingComponent,
@@ -102,12 +96,9 @@ import { CreatemeetingComponent } from './createmeeting/createmeeting.component'
     MatListModule,
     MatSidenavModule,
     MatMenuModule,
-<<<<<<< HEAD
-    MatDialogModule
+    MatDialogModule,
     
-=======
     HttpClientModule
->>>>>>> 2c51e302fc896ed2985aab5623167341bcb1b1e7
   
     
   ],
