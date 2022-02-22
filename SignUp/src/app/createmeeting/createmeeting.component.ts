@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
-
 @Component({
-  selector: 'app-create-task-dashboard',
-  templateUrl: './create-task-dashboard.component.html',
-  styleUrls: ['./create-task-dashboard.component.css']
+  selector: 'app-createmeeting',
+  templateUrl: './createmeeting.component.html',
+  styleUrls: ['./createmeeting.component.css']
 })
-export class CreateTaskDashboardComponent implements OnInit {
+export class CreatemeetingComponent implements OnInit {
 
   TaskFormGroup:any | FormGroup;
   addPropleFormGroup:any | FormGroup;
   constructor(private _formBuilder: FormBuilder) {}
 
+ 
   ngOnInit() {
     this.TaskFormGroup = this._formBuilder.group({
       taskTitle:['',Validators.required]
@@ -42,6 +42,7 @@ export class CreateTaskDashboardComponent implements OnInit {
     })
   }
 
+
   //implementation for for add people
   todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
 
@@ -59,7 +60,5 @@ export class CreateTaskDashboardComponent implements OnInit {
       );
     }
   }
-  
+
 }
-
-

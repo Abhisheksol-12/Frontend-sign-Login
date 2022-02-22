@@ -7,6 +7,7 @@ import { CreateTaskDashboardComponent } from './create-task-dashboard/create-tas
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
 import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
+import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
 
 
 const routes: Routes = [
@@ -19,10 +20,7 @@ const routes: Routes = [
  { path:'aboutpage', component:AboutpageComponent},
  { path:'view-task', component:ViewTaskComponent},
  { path:'view-meeting', component:ViewMeetingComponent},
-
- 
-
-  
+ {path: 'createmeeting', component:CreatemeetingComponent },  
 ];
 
 @NgModule({
