@@ -31,6 +31,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
+import { ShowTaskComponent } from './show-task/show-task.component';
+import { UpdateTaskComponent } from './update-task/update-task.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 
@@ -51,7 +55,9 @@ import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
     SidenavComponent,
     HomeComponent,
     AboutpageComponent,
-    ViewMeetingComponent
+    ViewMeetingComponent,
+    ShowTaskComponent,
+    UpdateTaskComponent
     
 
 
@@ -79,6 +85,7 @@ import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
     MatListModule,
     MatSidenavModule,
     MatMenuModule,
+    MatDialogModule
     
   
     

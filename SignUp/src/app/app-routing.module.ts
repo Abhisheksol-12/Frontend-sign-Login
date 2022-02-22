@@ -7,6 +7,8 @@ import { CreateTaskDashboardComponent } from './create-task-dashboard/create-tas
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ViewTaskComponent } from './view-task/view-task.component';
 import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
+import { ShowTaskComponent } from './show-task/show-task.component';
+import { UpdateTaskComponent } from './update-task/update-task.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,10 @@ const routes: Routes = [
  { path:'aboutpage', component:AboutpageComponent},
  { path:'view-task', component:ViewTaskComponent},
  { path:'view-meeting', component:ViewMeetingComponent},
+ { path:'show-task', component:ShowTaskComponent},
+ { path:'update-task', component:UpdateTaskComponent},
+
+
 
  
 
