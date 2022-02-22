@@ -29,6 +29,11 @@ import { HomeComponent } from './home/home.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FilterPeoplePipe } from './Pipes/filter-people.pipe';
+import { AddPeopleComponent } from './add-people/add-people.component';
+import { CreateMeetingDashboardComponent } from './create-meeting-dashboard/create-meeting-dashboard.component';
+//import { AuthInterceptor } from './services/auth.interceptor';
 
 
 
@@ -46,10 +51,11 @@ import {MatMenuModule} from '@angular/material/menu';
     CreateTaskDashboardComponent,
     HeaderComponent,
     SidenavComponent,
-    HomeComponent
+    HomeComponent,
+    FilterPeoplePipe,
+    AddPeopleComponent,
+    CreateMeetingDashboardComponent,
     
-
-
   ],
   imports: [
     BrowserModule,
@@ -72,12 +78,13 @@ import {MatMenuModule} from '@angular/material/menu';
     ScrollingModule,
     MatListModule,
     MatSidenavModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   
     
   ],
 
-  providers: [],
+  providers: [],//[[{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

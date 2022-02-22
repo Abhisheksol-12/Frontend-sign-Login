@@ -6,32 +6,33 @@
 
     <mat-toolbar fxLayoutAlign="center center" color="primary"> SignUp</mat-toolbar>
 
-    <form fxLayoutAlign="stretch" fxLayout="column" class="mytask">
+    <form (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column" class="mytask">
 
       <mat-form-field appearance="fill">
         <mat-label>Username</mat-label>
-        <input matInput type="text" placeholder="Enter-Name" value="">
+        <input [(ngModel)]="user.username" name = "username" matInput type="text" placeholder="Enter-Name" >
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>User Email-id </mat-label>
-        <input matInput type="email" placeholder="Enter-Id" value="">
+        <input [(ngModel)]="user.email" name = "email" matInput type="email" placeholder="Enter-Id" >
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="Enter-Password" value="">
+        <input [(ngModel)]="user.password" name = "password" matInput type="password" placeholder="Enter-Password" >
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Re-Password</mat-label>
-        <input matInput type="password" placeholder="Enter-Password-Again" value="">
+        <input [(ngModel)]="repassword" name = "repassword" matInput type="password" placeholder="Enter-Password-Again" >
       </mat-form-field>
 
+      <div class="text-center">
+        <button mat-raised-button type="submit" class="btn btn-primary btn-success">Submit</button>
+      </div>
     </form>
-    <div class="text-center">
-      <button mat-raised-button type="submit" class="btn btn-primary btn-success">Submit</button>
-    </div>
+    
 
     <p id="para">Already have an account?</p>
     <a id="para" routerLink="../login" >login</a> 
