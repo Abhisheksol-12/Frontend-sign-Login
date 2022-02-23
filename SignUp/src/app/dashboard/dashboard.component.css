@@ -47,7 +47,7 @@ main{
     height: 100%;
     /* margin: 50px auto; */
     padding: 10px;
-    border: 1px solid black;
+    
     display: grid ; color: black;
     grid-template-rows: 350px 350px 350px 350px ;
     grid-template-columns: repeat(2 , 1fr) ;
@@ -55,20 +55,24 @@ main{
 }
 
 .div1{
-    background-color: yellow;
+    background-color: rgb(236, 236, 219);
+    border: 1px solid black;
     
     /* grid-column: 1; */
 }
 
 .div2{
   
-    background-color: yellow;
+    background-color: rgb(236, 236, 219);
+    border: 1px solid black;
 }
 
 .div3{
-    background-color: yellow;
+    background-color: rgb(236, 236, 219);
+    border: 1px solid black;
 }
 
 .div4{
-    background-color: yellow;
+    background-color: rgb(236, 236, 219);
+    border: 1px solid black;
 }
