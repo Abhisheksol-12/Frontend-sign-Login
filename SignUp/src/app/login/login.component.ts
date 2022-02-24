@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Credentials } from '../models/credentials';
 import { LoginService } from '../services/login.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +11,10 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  users:any;
   
-  credentials={
-    username:'',
-    password:'',
-  }
+  credentials : Credentials = new Credentials();
 
-  constructor(private loginService : LoginService){}
+  constructor(private loginService : LoginService,private userService : UserService,private router:Router){}
 
   ngOnInit(): void {
   }
@@ -33,9 +32,8 @@ export class LoginComponent implements OnInit {
       this.loginService.generateToken(this.credentials).subscribe(
         (response:any)=>{
           //success
-          console.log(response); //response.token;
-          //this.loginService.loginUser(response.token)
-          //window.location.href="/dashboard"
+          this.loginService.loginUser(response.access_token);
+          this.router.navigate(['dashboard']);
           
         },error=>{
           //error
@@ -48,3 +46,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
