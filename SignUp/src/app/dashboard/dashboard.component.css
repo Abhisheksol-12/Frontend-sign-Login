@@ -34,12 +34,45 @@ p {
     padding: 10px;
 }
 
-mat-card{
-    padding: 5px;
-    margin: 5px;
-    background-color: grey;
-    opacity: .8;
-    border: 3px soild black;
-    
+/* */
+
+*{
+    margin: 0 ; padding: 0; 
+    box-sizing: border-box;
+    /* background: red; */
 }
 
+main{
+    /* width: 90%; */
+    height: 100%;
+    /* margin: 50px auto; */
+    padding: 10px;
+    
+    display: grid ; color: black;
+    grid-template-rows: 350px 350px 350px 350px ;
+    grid-template-columns: repeat(2 , 1fr) ;
+    grid-gap: 12px;
+}
+
+.div1{
+    background-color: rgb(236, 236, 219);
+    border: 1px solid black;
+    
+    /* grid-column: 1; */
+}
+
+.div2{
+  
+    background-color: rgb(236, 236, 219);
+    border: 1px solid black;
+}
+
+.div3{
+    background-color: rgb(236, 236, 219);
+    border: 1px solid black;
+}
+
+.div4{
+    background-color: rgb(236, 236, 219);
+    border: 1px solid black;
+}

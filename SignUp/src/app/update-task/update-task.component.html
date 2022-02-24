@@ -1,0 +1,147 @@
+<mat-card class="card">
+    <div class="row">
+        <mat-form-field class="half-row" appearance="outline">
+            <mat-label>Task Title</mat-label>
+            <input matInput type="text" placeholder="Enter Task Name" required>
+        </mat-form-field>
+    
+
+   
+        <mat-form-field class="half-row" appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput type="text" placeholder="Enter Description" required>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="half-row" style="margin-right: 10px;" color="accent"
+                appearance="fill">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="half-row" appearance="fill">
+                <mat-label>start time</mat-label>
+                <input matInput type="time" placeholder="Enter start time">
+            </mat-form-field>
+        </div>
+        <div class="col">
+
+            <mat-form-field class="half-row" style="margin-right: 10px;" color="accent"
+                appearance="fill">
+                <mat-label>Due Date</mat-label>
+                <input matInput [matDatepicker]="picker2">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="half-row" appearance="fill">
+                <mat-label>due time</mat-label>
+                <input matInput type="time" placeholder="Enter due time">
+            </mat-form-field>
+        </div>
+    </div>
+
+<div class="row">
+
+        <!-- Button trigger modal -->
+ <button type="button" id="addUsers" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" >
+    Add User
+ </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel1">Add user</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+           <div><h4>Select Users</h4></div>
+           <ul class="list-group">
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Katy
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Jim
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Alex
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Fourth checkbox
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+              Fifth checkbox
+            </li>
+          </ul>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" id="addUsers" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Delete User
+ </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Delete user</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body2">
+          
+            <ul class="list-group">
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                  Katy
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                  Jim
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                  Alex
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                  Fourth checkbox
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                  Fifth checkbox
+                </li>
+              </ul>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" (click)="closeModal()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</div>
+
+
+</mat-card>

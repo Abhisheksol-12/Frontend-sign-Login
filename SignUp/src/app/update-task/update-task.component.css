@@ -1,0 +1,20 @@
+.card{
+    margin-top: 70px;
+    max-width: fit-content;
+    margin-left: 5cm;
+}
+
+.half-row{
+    max-width: 50%;
+}
+#addUsers{
+    max-width: max-content;
+    margin-left: 10px;
+}
+#deleteUser{
+    max-width: max-content;
+    margin-left: 20px;
+}
+.dropdownMenuButton1{
+    margin-left: 20px;
+}

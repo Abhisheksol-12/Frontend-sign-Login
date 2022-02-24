@@ -1,37 +1,33 @@
-.content{
-    padding: 20px;
-    /* margin-top: 65px; */
+
+.form-inline.ng-untouched.ng-pristine.ng-valid {
+    display: flex;
+    position: absolute;
+    left: 93vw;
+}
+
+button{
+
+    padding: 4px;
+    height: 45px;
+
+}
+
+main{
+    
+    background-color: blue;
+    height: 100vh; 
+    opacity: 0.7; 
+    display: grid; color: black;
+    grid-template-rows: 100px 100px;
+    grid-template-columns: repeat(2 , 1fr) ;
+    grid-gap: 10px;
+
+}
+
+/* .div1{
+
     height: 100vh;
-    width:  100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
- 
-}
+    border: 2px solid black;
+} */
 
-.imgcontent
-{
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 650px;
-    height: 400px;
-    padding: 10px;
-    margin: 1px;
-}
-
-#logo{
-    width: 30px;
-    height: 30px;
-    border-radius: 100px;
-}
-
-.container{
-    /* margin: 10px; */
-    /* margin-right: 1px; */
-}
-
-body{
-    color: black;
-}
