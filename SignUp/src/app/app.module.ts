@@ -40,6 +40,7 @@ import { ShowTaskComponent } from './show-task/show-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -104,7 +105,7 @@ import { CreatemeetingComponent } from './createmeeting/createmeeting.component'
   ],
   
 
-  providers: [],//[[{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}]],
+  providers: [DatePipe],//[[{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

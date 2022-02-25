@@ -21,15 +21,13 @@
                 <div class="text-center">
                     <h2>Selected People</h2>
                 </div>
-                <mat-form-field class="searchbar" appearance="outline">
-                    <mat-label>Search Here</mat-label>
-                    <input matInput type="search" placeholder="Enter Name" [(ngModel)]="filterTextRight"
-                        (ngModelChange)="onTextChangedRight()">
-                    <mat-icon matSuffix>search</mat-icon>
-                </mat-form-field>
-
                 <div>
-                    
+                    <mat-form-field class="searchbar" appearance="outline">
+                        <mat-label>Search Here</mat-label>
+                        <input matInput type="search" placeholder="Enter Name" [(ngModel)]="filterTextRight"
+                            (ngModelChange)="onTextChangedRight()">
+                        <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
                 </div>
             </mat-card>
 
@@ -39,41 +37,62 @@
         <div class="col">
             <mat-card>
                 <div class="example-container">
-                    <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
-                        <div class="example-box" *ngFor="let item of todo | filterPeople:filterTextLeft:dummy" cdkDrag>
-                            {{item}}
+                    <div cdkDropList [cdkDropListData]="selectedList | filterPeople: filterTextLeft:dummy"
+                        [id]="'selectedList'" class="example-list" (cdkDropListDropped)="dropItem($event)">
+                        <div class="example-box" *ngFor="let item of selectedList | filterPeople:filterTextLeft:dummy;
+                        index as i" cdkDropListSortingDisabled cdkDrag>
+                            <mat-icon class="icon-logo" matPrefix>account_circle</mat-icon>
+                            <div class="container">
+                                <div class="fullName">
+                                    {{ item.fullName }}
+                                    <!-- {{ item.id }} -->
+                                </div>
+                                <div style="color: blue;" >
+                                    {{ item.userName }}
+                                    <!-- {{ item.userId }} -->
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div style="text-align: end;">
+                    <button mat-raised-button color="warn" (click)="selectAllPeople()" >All </button>
                 </div>
             </mat-card>
         </div>
         <div class="col">
             <mat-card>
                 <div class="example-container">
-                    <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
-                        <div class="example-box" *ngFor="let item of done | filterPeople:filterTextRight:dummy" cdkDrag>
-                            {{item}}
+                    <div cdkDropList [cdkDropListData]="availableList | filterPeople: filterTextRight:dummy"
+                        [id]="'availableList'" class="example-list" (cdkDropListDropped)="dropItem($event)">
+                        <div class="example-box" *ngFor="let item of availableList | filterPeople:filterTextRight:dummy;
+                        index as i" cdkDropListSortingDisabled cdkDrag>
+                            <mat-icon class="icon-logo" matPrefix>account_circle</mat-icon>
+                            <div class="container">
+                                <div class="fullName">
+                                    {{ item.fullName }}
+                                    <!-- {{ item.id }} -->
+                                </div>
+                                <div style="color:red;">
+                                    {{ item.userName }}
+                                    <!-- {{ item.userId }} -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div style="text-align:start;">
+                    <button mat-raised-button color="primary" (click)="clearAllPeople()" >clear</button>
+                </div>
+
             </mat-card>
 
         </div>
-
     </div>
+    
     <div class="row" style="margin-top: 25px;text-align: center;">
-        <div class="row">
-            
-        </div>
-        <div class="col">
-            <button mat-raised-button matStepperPrevious>Previous</button>
-        </div>
-        <div class="col">
-            <button mat-raised-button color="primary">Add</button>
-        </div>
-        <div class="col">
-            <button mat-raised-button matStepperNext>Next</button>
-        </div>
+        <button mat-raised-button color="primary"  (click)="addPeople()" >Add</button>
+     </div>
 
-    </div>
+
 </div>

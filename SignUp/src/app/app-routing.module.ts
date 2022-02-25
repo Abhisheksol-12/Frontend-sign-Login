@@ -26,20 +26,8 @@ const routes: Routes = [
  { path:'aboutpage', component:AboutpageComponent,canActivate:[AuthGuard]},
  { path:'view-task', component:ViewTaskComponent,canActivate:[AuthGuard]},
  { path:'view-meeting', component:ViewMeetingComponent,canActivate:[AuthGuard]},
- { path:'dashboard', component:DashboardComponent},
- { path:'create-task-dashboard', component:CreateTaskDashboardComponent},
- { path:'aboutpage', component:AboutpageComponent},
- { path:'view-task', component:ViewTaskComponent},
- { path:'view-meeting', component:ViewMeetingComponent},
  { path:'show-task', component:ShowTaskComponent},
  { path:'update-task', component:UpdateTaskComponent},
-
-
-
- 
-
-  
- {path: 'createmeeting', component:CreatemeetingComponent },  
 ];
 
 @NgModule({

@@ -1,9 +1,9 @@
 <div class="container" text-center>
     <mat-card class="card">
-        <mat-stepper linear labelPosition="bottom" #stepper>
+        <mat-stepper  labelPosition="bottom" #stepper>
             <mat-step [stepControl]="TaskFormGroup">
 
-                <form [formGroup]="TaskFormGroup" class="text-center" (ngSubmit)="onCreate()">
+                <form [formGroup]="TaskFormGroup" class="text-center" (ngSubmit)="onCreateMeeting()">
                     <ng-template matStepLabel>Create Meeting</ng-template>
 
                     <div class="form-group" class="row">
@@ -12,12 +12,7 @@
                             <input matInput type="text" placeholder="Enter Meeting Name" formControlName="taskTitle" required>
                         </mat-form-field>
                     </div>
-                    <div class="form-group" class="row">
-                        <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Purpose</mat-label>
-                            <input matInput type="text" placeholder="Enter Purpose of Meeting" formControlName="purpose" >
-                        </mat-form-field>
-                    </div>
+
                     <div class="form-group" class="row">
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Place</mat-label>
@@ -30,14 +25,14 @@
                             <mat-form-field class="half-width" style="margin-right: 10px;" color="accent"
                                 appearance="fill">
                                 <mat-label>Start Date</mat-label>
-                                <input matInput [matDatepicker]="picker1" formControlName="startDate" required>
+                                <input matInput [matDatepicker]="picker1" class="icon-cal" formControlName="startDate" required>
                                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                                 <mat-datepicker #picker1></mat-datepicker>
                             </mat-form-field>
 
                             <mat-form-field class="half-width" appearance="fill">
                                 <mat-label>start time</mat-label>
-                                <input matInput type="time" placeholder="Enter start time" formControlName="startTime" required>
+                                <input matInput type="time" class="icon-logo" placeholder="Enter start time" formControlName="startTime" required>
                             </mat-form-field>
                         </div>
                         <div class="col">
@@ -45,14 +40,14 @@
                             <mat-form-field class="half-width" style="margin-right: 10px;" color="accent"
                                 appearance="fill">
                                 <mat-label>Due Date</mat-label>
-                                <input matInput [matDatepicker]="picker2" formControlName="dueDate" required>
+                                <input matInput [matDatepicker]="picker2" class="icon-cal" formControlName="dueDate" required>
                                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                                 <mat-datepicker #picker2 color="primary"></mat-datepicker>
                             </mat-form-field>
 
                             <mat-form-field class="half-width" appearance="fill">
                                 <mat-label>due time</mat-label>
-                                <input matInput type="time" placeholder="Enter due time" formControlName="dueTime" required>
+                                <input matInput type="time" class="icon-logo" placeholder="Enter due time" formControlName="dueTime" required>
                             </mat-form-field>
                         </div>
                     </div>
@@ -67,10 +62,15 @@
 
                     <div class="row">
                         <div class="col">
-                            <button type="submit" [disabled]="!TaskFormGroup.valid" mat-raised-button color="primary">Create</button>
+
                         </div>
                         <div class="col">
-                            <button mat-raised-button matStepperNext>Next</button>
+                            <button type="submit" [disabled]="!TaskFormGroup.valid" mat-raised-button color="primary">Create</button>
+                        </div>
+                        <div class="col" style="text-align: end;">
+                            <button mat-mini-fab color="warn" matStepperNext >
+                                <mat-icon >keyboard_arrow_right</mat-icon>
+                              </button>
                         </div>
                     </div>
                 </form>
@@ -80,6 +80,18 @@
             <mat-step >
                 <ng-template matStepLabel>Add People</ng-template>
                 <app-add-people></app-add-people>
+                <div class="row" style="margin-top: 30px;">
+                    <div class="col" style="text-align: start;">
+                        <button mat-mini-fab color="primary" matStepperPrevious >
+                            <mat-icon>keyboard_arrow_left</mat-icon>
+                          </button>
+                    </div>
+                    <div class="col" style="text-align: end;">
+                        <button mat-mini-fab color="warn" matStepperNext >
+                            <mat-icon >keyboard_arrow_right</mat-icon>
+                          </button>
+                    </div>
+                </div>
                     
             </mat-step>
             
@@ -90,11 +102,16 @@
                         <p>You have completed all requirements.</p>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <button mat-raised-button matStepperPrevious>Back</button>
+                        <div class="col" style="text-align: start;">
+                            <button mat-mini-fab color="primary" matStepperPrevious >
+                                <mat-icon>keyboard_arrow_left</mat-icon>
+                              </button>
+                        </div>
+                        <div class="col" style="text-align: center;">
+                            <button mat-raised-button color="warn" (click)="onSubmitTask()" (click)="stepper.reset()">Create and reset</button>
                         </div>
                         <div class="col">
-                            <button mat-raised-button color="primary" (click)="stepper.reset()">Create and reset</button>
+
                         </div>
                     </div>
                 </div>

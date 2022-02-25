@@ -20,6 +20,14 @@
   margin: 25px;
   align-items: center;
 }
+.icon-logo{
+  font-size: 30px;
+  color:blue
+}
+.icon-cal{
+  font-size: 27px;
+  color:blue
+}
 /* .userlist{
   margin-top: 30px;
   max-height: 600px;

@@ -7,8 +7,6 @@ import { Injectable } from '@angular/core';
 export class LoginService {
 
   url="http://localhost:8080/api";
- 
-
   constructor(private http:HttpClient) { }
 
   generateToken(credentials: any){ 
@@ -17,7 +15,8 @@ export class LoginService {
 
 
   //for login user
-  loginUser(token:any){
+  loginUser(token:string,username:string){
+    sessionStorage.setItem('username',username)
     sessionStorage.setItem("token",token);
   }
 
@@ -34,12 +33,14 @@ export class LoginService {
   //for logout means remove token from local storage
   logout(){
     sessionStorage.removeItem("token");
+    sessionStorage.removeItem("username");
     return true;
   }
 
   //get token from local storage
   getToken(){
-    return sessionStorage.getItem("token");
+    let token = sessionStorage.getItem("token");
+    return token;
   }
 
 }

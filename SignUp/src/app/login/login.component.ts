@@ -28,11 +28,12 @@ export class LoginComponent implements OnInit {
 
     }else{
       //get token against the credentials username
-      console.log("form is submitting");
+     // console.log("form is submitting");
       this.loginService.generateToken(this.credentials).subscribe(
         (response:any)=>{
           //success
-          this.loginService.loginUser(response.access_token);
+          this.loginService.loginUser(response.access_token,this.credentials.username);
+          
           this.router.navigate(['dashboard']);
           
         },error=>{
@@ -40,7 +41,6 @@ export class LoginComponent implements OnInit {
           console.log(error);
         }
       )
-
       
     }
   }
