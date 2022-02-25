@@ -19,10 +19,13 @@ const routes: Routes = [
  { path:'signup', component:SignupComponent},
  { path:'', redirectTo: '/login' , pathMatch:'full'},
  { path:'login', component:LoginComponent},
- { path:'dashboard', component:DashboardComponent},//canActivate:[AuthGuard]
- { path:'create-task-dashboard', component:CreateTaskDashboardComponent},//canActivate:[AuthGuard]
- { path:'create-meeting-dashboard', component:CreateMeetingDashboardComponent},
+ { path:'dashboard', component:DashboardComponent,canActivate:[AuthGuard]},//canActivate:[AuthGuard]
+ { path:'create-task-dashboard', component:CreateTaskDashboardComponent,canActivate:[AuthGuard]},//canActivate:[AuthGuard]
+ { path:'create-meeting-dashboard', component:CreateMeetingDashboardComponent,canActivate:[AuthGuard]},
   
+ { path:'aboutpage', component:AboutpageComponent,canActivate:[AuthGuard]},
+ { path:'view-task', component:ViewTaskComponent,canActivate:[AuthGuard]},
+ { path:'view-meeting', component:ViewMeetingComponent,canActivate:[AuthGuard]},
  { path:'dashboard', component:DashboardComponent},
  { path:'create-task-dashboard', component:CreateTaskDashboardComponent},
  { path:'aboutpage', component:AboutpageComponent},

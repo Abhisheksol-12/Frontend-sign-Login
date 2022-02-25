@@ -13,9 +13,9 @@
                            <mat-icon class="user-image-icon ml-1" > keyboard_arrow_down</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu"> 
-                        <button mat-menu-item  >
-                            <mat-icon>exit_to_app</mat-icon>
-                          <button  style=" color: black; border-radius: 50px ;" class="btn-danger" routerLink="../login">logout</button>
+                        <button  mat-menu-item  >
+                            <mat-icon >exit_to_app</mat-icon>
+                          <button (click)="onSubmit()" style=" color: black; border-radius: 50px ;" class="btn-danger" >logout</button>
                         </button>
                     </mat-menu>
                 </li>

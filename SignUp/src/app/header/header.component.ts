@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 // import { EventEmitter } from 'stream';
 
 @Component({
@@ -10,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
 @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(private loginService : LoginService,private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +21,12 @@ export class HeaderComponent implements OnInit {
   {
     this.toggleSidebarForMe.emit();
 
+  }
+
+  onSubmit(){
+    console.log("working");
+    this.loginService.logout();
+    this.router.navigate(['login']);
   }
 
   

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
+import { User } from '../models/user';
+import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,26 +10,19 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  users:any;
-
-  user={
-    username:'',
-    email:'',
-    password:'',
-  }
+  user:User = new User();
   repassword='';
 
-  constructor(private loginService : LoginService){}
+  constructor(private userService : UserService,private router:Router){}
 
   ngOnInit(): void {
   }
 
   onSubmit(){
     
-    if(this.user.username=='' || this.user.password=='' || this.user.email=='' ||
-      this.repassword=='' || this.user.username==null || this.user.password==null ||
-       this.user.email==null || this.repassword==null ){
+    if(this.user.firstName=='' || this.user.password=='' || this.user.username=='' ||
+      this.repassword=='' || this.user.firstName==null || this.user.password==null ||
+       this.user.username==null || this.repassword==null ){
 
         console.log("Fields are empty");
 
@@ -38,11 +34,11 @@ export class SignupComponent implements OnInit {
       //save the credentials into database
 
       console.log("form is submitting");
-      console.log(this.user);
-      this.loginService.saveUser(this.user).subscribe(
+      this.userService.saveUser(this.user).subscribe(
         response=>{
           //success
           console.log(response);
+          this.router.navigate(['login']);
           
         },error=>{
           //error
