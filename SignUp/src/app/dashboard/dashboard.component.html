@@ -10,16 +10,13 @@
               <app-header (toggleSidebarForMe)="sideBarToggler()">
               </app-header>
               <router-outlet>
-                     <!-- <app-header></app-header> -->
 
-                     <mat-toolbar fxLayoutAlign="center center" >
-                            <span style="position:static"> DASHBOARD </span>
-                     </mat-toolbar>
 
                      <main >
 
-                            <div class="div1"> <P>HOW TO CREATE TASK ?</P> 
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo perspiciatis provident hic eos totam accusantium corporis mollitia id! Temporibus laboriosam nemo culpa alias quis minus explicabo distinctio eaque! Modi, delectus!</p>
+                            <div class="div1">  <P> <mat-icon>edit</mat-icon> HOW TO CREATE TASK ?   </P> 
+
+                                   <p> 1. Select New Items > Task or press Ctrl+Shift+K. </p>
 
                             <mat-card-content>
                                    <p>
@@ -37,7 +34,7 @@
                             </mat-card-actions>
 
                             </div>
-                            <div class="div2"> <P>HOW TO CREATE MEETINGS?</P> 
+                            <div class="div2">  <P> <mat-icon>edit</mat-icon> HOW TO CREATE MEETINGS?</P> 
                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo perspiciatis provident hic eos totam accusantium corporis mollitia id! Temporibus laboriosam nemo culpa alias quis minus explicabo distinctio eaque! Modi, delectus!</p>
                                    <mat-card-content>
                                           <p>
@@ -54,7 +51,7 @@
                                           </div>
                                    </mat-card-actions>
                             </div>
-                            <div class="div3"> <P>HOW TO VIEW TASK?</P> 
+                            <div class="div3">  <P> <mat-icon>assignment</mat-icon>  HOW TO VIEW TASK?</P> 
                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo perspiciatis provident hic eos totam accusantium corporis mollitia id! Temporibus laboriosam nemo culpa alias quis minus explicabo distinctio eaque! Modi, delectus!</p>
 
                                    <mat-card-content>
@@ -65,7 +62,7 @@
        
                                    <mat-card-actions>
                                           <div class="text-center">
-                                                 <button mat-button mat-raised-button class="btn-info"
+                                                 <button mat-button mat-raised-button  class="btn btn-success"
                                                         style="width : 9em;" routerLink="../view-task"  >view-task</button>
                                                  <button mat-button class="btn-primary" (click)="fun()">Like</button>
        
@@ -73,7 +70,7 @@
                                    </mat-card-actions>
 
                             </div>
-                            <div class="div4"> <P>HOW TO VIEW MEETINGS?</P> 
+                            <div class="div4"> <P> <P> <mat-icon>assignment</mat-icon> HOW TO VIEW MEETINGS?</P> 
                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo perspiciatis provident hic eos totam accusantium corporis mollitia id! Temporibus laboriosam nemo culpa alias quis minus explicabo distinctio eaque! Modi, delectus!</p>
 
                                    <mat-card-content>
@@ -109,25 +106,3 @@
 
 
 
-
-//////////////////////////////
-
-<!-- <div class="container">
-       <div class="row">
-              <div class="col">
-
-              </div>
-              <div class="col">
-
-              </div>
-       </div>
-       <div class="row">
-              <div class="col">
-
-              </div>
-              <div class="col">
-
-              </div>
-              
-       </div>
-</div> -->

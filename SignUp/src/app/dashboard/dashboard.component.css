@@ -55,7 +55,7 @@ main{
 }
 
 .div1{
-    background-color: rgb(236, 236, 219);
+    /* background-color: rgb(236, 236, 219); */
     border: 1px solid black;
     
     /* grid-column: 1; */
@@ -63,16 +63,16 @@ main{
 
 .div2{
   
-    background-color: rgb(236, 236, 219);
+    /* background-color: rgb(236, 236, 219); */
     border: 1px solid black;
 }
 
 .div3{
-    background-color: rgb(236, 236, 219);
+    /* background-color: rgb(236, 236, 219); */
     border: 1px solid black;
 }
 
 .div4{
-    background-color: rgb(236, 236, 219);
+  
     border: 1px solid black;
 }

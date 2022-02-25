@@ -1,9 +1,9 @@
-<mat-toolbar color="primary" >
-
+<mat-toolbar color="primary" style="height:fit-content;" >  
+   <span style="justify-content: center; text-align: center; margin:0px;">dashboard</span>
     <mat-toolbar-row class="justify-content-between" >
-        <button mat-icon-button (click)="togglesSidebar()"><mat-icon> menu </mat-icon> </button>
+        <button mat-icon-button (click)="togglesSidebar()">  <mat-icon> menu </mat-icon> </button>
         <div class="row mr-2 ml-auto" >
-
+                
             <ul>
                 <li>
                     <button mat-button [mat-menu-trigger-for]= "menu" class="user mt-2 d-flex align-items-center " >

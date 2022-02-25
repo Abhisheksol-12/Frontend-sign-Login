@@ -12,6 +12,7 @@ import { ViewMeetingComponent } from './view-meeting/view-meeting.component';
 import { ShowTaskComponent } from './show-task/show-task.component';
 import { UpdateTaskComponent } from './update-task/update-task.component';
 import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
+import { UnivaboutComponent } from './univabout/univabout.component';
 
 
 const routes: Routes = [
@@ -28,8 +29,9 @@ const routes: Routes = [
  { path:'view-meeting', component:ViewMeetingComponent,canActivate:[AuthGuard]},
  { path:'show-task', component:ShowTaskComponent},
  { path:'update-task', component:UpdateTaskComponent},
-  
  {path: 'createmeeting', component:CreatemeetingComponent },  
+  {path: 'univabout' , component:UnivaboutComponent},
+
 ];
 
 @NgModule({

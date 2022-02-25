@@ -19,6 +19,8 @@ export class CreateTaskDashboardComponent implements OnInit {
     private dataProvider:DataProviderService,private userService:UserService) {}
   task = new AddTask();
     userNameId:any;
+    sideBarOpen: any;
+
 
   ngOnInit() {
     this.TaskFormGroup = this._formBuilder.group({
@@ -29,6 +31,11 @@ export class CreateTaskDashboardComponent implements OnInit {
       dueTime:['',Validators.required],
       discription:['',Validators.required],
     })
+  }
+
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
   }
 
   username:any;

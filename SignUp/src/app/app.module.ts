@@ -41,6 +41,7 @@ import { UpdateTaskComponent } from './update-task/update-task.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
 import { DatePipe } from '@angular/common';
+import { UnivaboutComponent } from './univabout/univabout.component';
 
 
 
@@ -71,7 +72,8 @@ import { DatePipe } from '@angular/common';
     
     AboutpageComponent,
     ViewMeetingComponent,
-    CreatemeetingComponent,    
+    CreatemeetingComponent,
+    UnivaboutComponent,    
 
   ],
   imports: [
