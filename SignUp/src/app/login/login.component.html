@@ -4,12 +4,12 @@
 		<mat-toolbar color="primary" fxLayoutAlign="center center">Login Now</mat-toolbar>
 		<form (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column" class="login-form" >
 			
-			<mat-form-field appearance="fill" class="form">
+			<mat-form-field appearance="outline" class="form">
 				<mat-label>Username</mat-label>
 				<input [(ngModel)]="credentials.username" name = "username" matInput type="text" id="text-box" placeholder="Enter-Name" >
 			</mat-form-field>
 		  
-			<mat-form-field appearance="fill" class="form">
+			<mat-form-field appearance="outline" class="form">
 				<mat-label>Password</mat-label>
 				<input [(ngModel)]="credentials.password" name = "password" matInput type="password" id="text-box" placeholder="Enter-Password" >
 			</mat-form-field>

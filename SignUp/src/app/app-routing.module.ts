@@ -30,11 +30,6 @@ const routes: Routes = [
  { path:'view-meeting', component:ViewMeetingComponent},
  { path:'show-task', component:ShowTaskComponent},
  { path:'update-task', component:UpdateTaskComponent},
-
-
-
- 
-
   
  {path: 'createmeeting', component:CreatemeetingComponent },  
 ];
