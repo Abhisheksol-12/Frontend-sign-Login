@@ -1,9 +1,10 @@
 
-.form-inline.ng-untouched.ng-pristine.ng-valid {
+.form-inline{
     display: flex;
     position: absolute;
     left: 93vw;
 }
+
 
 button{
 
