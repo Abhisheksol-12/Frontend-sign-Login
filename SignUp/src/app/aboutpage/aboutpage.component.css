@@ -25,10 +25,8 @@ main{
 
 }
 
-/* .div1{
-
-    height: 100vh;
-    border: 2px solid black;
-} */
+a:hover{
+    background-color: blue;
+}
 
 
