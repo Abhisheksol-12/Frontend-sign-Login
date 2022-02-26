@@ -43,6 +43,8 @@ import { CreatemeetingComponent } from './createmeeting/createmeeting.component'
 import { DatePipe } from '@angular/common';
 import { UnivaboutComponent } from './univabout/univabout.component';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common'
+import{ViewTaskComponent} from './view-task/view-task.component'
 
 
 
@@ -71,6 +73,7 @@ import { RouterModule } from '@angular/router';
     FilterPeoplePipe,
     AddPeopleComponent,
     CreateMeetingDashboardComponent,
+    ViewTaskComponent,
     
     AboutpageComponent,
     ViewMeetingComponent,
@@ -104,7 +107,8 @@ import { RouterModule } from '@angular/router';
     MatDialogModule,
     
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    CommonModule
     
     
   
