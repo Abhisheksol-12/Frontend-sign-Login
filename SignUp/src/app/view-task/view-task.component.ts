@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GetTasksService} from '../services/get-tasks.service'
+import{tasks} from '../models/tasks'
+
 @Component({
   selector: 'app-view-task',
   templateUrl: './view-task.component.html',
@@ -7,13 +9,21 @@ import {GetTasksService} from '../services/get-tasks.service'
 })
 export class ViewTaskComponent implements OnInit {
 
-  tasks:any;
-  constructor(private getTask:GetTasksService) {}
-  
+  //tasks:any;
+  constructor(private Task:GetTasksService) {}
+  listTasks: tasks[] = [];; 
+  userid:any;
+
+  getId(){
+
+  }
+
+
+
   getTasks(){
-    this.getTask.tasks().subscribe((data: any)=>{
-      console.warn("data",data);
-      this.tasks=data
+    this.Task.getTask(5).subscribe(data=>{
+      //console.warn("data",data);
+      this.listTasks=data; 
     });
   }
   ngOnInit(): void {
