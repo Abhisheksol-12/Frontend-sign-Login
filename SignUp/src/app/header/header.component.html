@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" style="height:fit-content;" >  
-   <span style="justify-content: center; text-align: center; margin:0px;">dashboard</span>
+   <span style="justify-content: center; text-align: center; margin:0px;">DASHBOARD</span>
     <mat-toolbar-row class="justify-content-between" >
         <button mat-icon-button (click)="togglesSidebar()">  <mat-icon> menu </mat-icon> </button>
         <div class="row mr-2 ml-auto" >
@@ -15,7 +15,11 @@
                     <mat-menu #menu="matMenu"> 
                         <button  mat-menu-item  >
                             <mat-icon >exit_to_app</mat-icon>
-                          <button (click)="onSubmit()" style=" color: black; border-radius: 50px ;" class="btn-danger" >logout</button>
+
+                         
+                         <button (click)="onSubmit()" style=" color: black; border-radius: 50px;" class="btn-danger" >logout</button>
+                     
+
                         </button>
                     </mat-menu>
                 </li>

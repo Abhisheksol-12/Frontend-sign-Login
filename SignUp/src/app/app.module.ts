@@ -43,6 +43,7 @@ import { CreatemeetingComponent } from './createmeeting/createmeeting.component'
 import { DatePipe } from '@angular/common';
 import { UnivaboutComponent } from './univabout/univabout.component';
 import { RouterModule } from '@angular/router';
+import { ViewTaskComponent } from './view-task/view-task.component';
 
 
 
@@ -75,7 +76,8 @@ import { RouterModule } from '@angular/router';
     AboutpageComponent,
     ViewMeetingComponent,
     CreatemeetingComponent,
-    UnivaboutComponent,    
+    UnivaboutComponent,
+    ViewTaskComponent    
 
   ],
   imports: [
