@@ -42,6 +42,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
 import { DatePipe } from '@angular/common';
 import { UnivaboutComponent } from './univabout/univabout.component';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -101,7 +103,10 @@ import { UnivaboutComponent } from './univabout/univabout.component';
     MatMenuModule,
     MatDialogModule,
     
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
+    
+    
   
     
   ],

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {GetTasksService} from '../services/get-tasks.service'
 import{tasks} from '../models/tasks'
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-view-task',
