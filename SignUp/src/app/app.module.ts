@@ -44,17 +44,9 @@ import { DatePipe } from '@angular/common';
 import { UnivaboutComponent } from './univabout/univabout.component';
 import { RouterModule } from '@angular/router';
 import { ViewTaskComponent } from './view-task/view-task.component';
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
+import { UpdateMeetingComponent } from './update-meeting/update-meeting.component'
 // import{ViewTaskComponent} from './view-task/view-task.component'
-
-
-
-
-
-
-
-
-
 
 
 @NgModule({
@@ -80,7 +72,8 @@ import { CommonModule } from '@angular/common'
     ViewMeetingComponent,
     CreatemeetingComponent,
     UnivaboutComponent,
-    ViewTaskComponent    
+    ViewTaskComponent,
+    UpdateMeetingComponent    
 
   ],
   imports: [
