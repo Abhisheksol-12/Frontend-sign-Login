@@ -85,7 +85,7 @@ export class ViewTaskComponent implements OnInit {
 
   }
   getNotInvited(){
-    this.taskService.getNotInvited(13).subscribe(
+    this.taskService.getNotInvited(17).subscribe(
       (response)=>{
         console.log(response);
       },(error) =>{

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MeetingService } from '../services/meeting.service';
 
 @Component({
   selector: 'app-view-meeting',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewMeetingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private meetingService:MeetingService) { }
 
   ngOnInit(): void {
+    this.getAllMeetings();
   }
+  getAllMeetings(){
+    this.meetingService.getAllMeeting().subscribe(
+      (response)=>{
+        console.log(response);
+      },(error)=>{
+        console.log(error);
+      }
+    )
+  }
+
 
 }

@@ -44,6 +44,12 @@ export class GetTasksService implements OnInit {
   ngOnInit(): void {
     
   }
+
+  saveTask(task:AddTask){
+    const jwt = sessionStorage.getItem('token');
+    const reqHeader = new HttpHeaders().set('Authorization','Bearer '+jwt);
+    return this.http.post(`${this.url}/task`,task,{headers:reqHeader});
+  }
   
 ///task/creator/{userid}
 
