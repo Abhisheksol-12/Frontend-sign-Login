@@ -7,6 +7,7 @@ import { People } from '../models/People';
 import { AddTask } from '../models/AddTask';
 import { UserNameId } from '../models/userNameId';
 import { AddMeeting } from '../models/AddMeeting';
+import { NameId } from '../models/nameid';
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +49,11 @@ export class UserService {
     const reqHeader = new HttpHeaders().set('Authorization',JWT_TOKEN);
 
     return this.http.get<UserNameId>(`${this.url}/user`,{params,headers:reqHeader});
+  }
+  getid(username:any,JWT_TOKEN:string){
+    const params = new HttpParams().set('username',username);
+    const reqHeader = new HttpHeaders().set('Authorization',JWT_TOKEN);
+
+    return this.http.get<NameId>(`${this.url}/user`,{params,headers:reqHeader});
   }
 }
