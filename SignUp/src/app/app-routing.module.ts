@@ -14,6 +14,7 @@ import { UpdateTaskComponent } from './update-task/update-task.component';
 import { CreatemeetingComponent } from './createmeeting/createmeeting.component';
 import { UnivaboutComponent } from './univabout/univabout.component';
 import { UpdateMeetingComponent } from './update-meeting/update-meeting.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,9 @@ const routes: Routes = [
  { path:'update-task', component:UpdateTaskComponent},
  {path: 'createmeeting', component:CreatemeetingComponent },  
   {path: 'univabout' , component:UnivaboutComponent},
-  {path:'update-meeting',component:UpdateMeetingComponent}
+  {path:'update-meeting',component:UpdateMeetingComponent},
+  {path:'add-user',component:AddUserComponent}
+
 
 ];
 
