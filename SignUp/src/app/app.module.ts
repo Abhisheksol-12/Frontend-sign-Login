@@ -46,7 +46,11 @@ import { RouterModule } from '@angular/router';
 import { ViewTaskComponent } from './view-task/view-task.component';
 import { CommonModule } from '@angular/common';
 import { UpdateMeetingComponent } from './update-meeting/update-meeting.component';
-import { AddUserComponent } from './add-user/add-user.component'
+import { AddUserComponent } from './add-user/add-user.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component'
+import {MatTabsModule} from '@angular/material/tabs';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
 // import{ViewTaskComponent} from './view-task/view-task.component'
 
 
@@ -75,7 +79,9 @@ import { AddUserComponent } from './add-user/add-user.component'
     UnivaboutComponent,
     ViewTaskComponent,
     UpdateMeetingComponent,
-    AddUserComponent    
+    AddUserComponent,
+    ResetPasswordComponent,
+    ForgotPasswordComponent 
 
   ],
   imports: [
@@ -105,7 +111,8 @@ import { AddUserComponent } from './add-user/add-user.component'
     
     HttpClientModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    MatTabsModule
     
     
   

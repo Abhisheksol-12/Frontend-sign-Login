@@ -1,24 +1,23 @@
 
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
 	<mat-card fxFlex="35" style="margin:2em;">
-		<mat-toolbar color="primary" fxLayoutAlign="center center">Login Now</mat-toolbar>
+		<mat-toolbar color="primary" fxLayoutAlign="center center">Login </mat-toolbar>
 		<form (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column" class="login-form" >
 			
-			<mat-form-field appearance="outline" class="form">
+			<mat-form-field appearance="fill" class="form">
 				<mat-label>Username</mat-label>
 				<input [(ngModel)]="credentials.username" name = "username" matInput type="text" id="text-box" placeholder="Enter-Name" >
 			</mat-form-field>
 		  
-			<mat-form-field appearance="outline" class="form">
+			<mat-form-field appearance="fill" class="form">
 				<mat-label>Password</mat-label>
 				<input [(ngModel)]="credentials.password" name = "password" matInput type="password" id="text-box" placeholder="Enter-Password" >
 			</mat-form-field>
 
 			<button mat-raised-button type="submit" id="button" class="btn btn-primary btn-success" >Login</button>
 		  </form>
-		  <p id="para">Don't have an account?</p>
-			<a id="para" routerLink="../signup" >Sign Up</a> 
-
+		  <p id="para">Don't have an account?  <a routerLink="../signup" style="color: #892CDC; font-weight: bolder;" >Sign Up</a> </p>
+		  <a id="para" routerLink="../forgot-password">Forgot Password</a>
 		  
 		  
 	</mat-card>
