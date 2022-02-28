@@ -12,6 +12,9 @@ import { DataProviderService } from '../services/data-provider.service';
 })
 export class AddPeopleComponent implements OnInit {
  
+
+  sideBarOpen:any;
+
   dummy = 0;
   textChanged = new EventEmitter<string>();
   filterTextLeft: string = "";
@@ -125,5 +128,12 @@ export class AddPeopleComponent implements OnInit {
     }
     return result;
   }
+
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
+  }
+
+
 }
 
