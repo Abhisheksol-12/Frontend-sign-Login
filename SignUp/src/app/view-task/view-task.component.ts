@@ -8,6 +8,7 @@ import { UserToTask } from '../models/UserToTask';
 import { DeleteUserFromTask } from '../models/DeleteUserFromTask';
 import { DeleteTaskRequest } from '../models/DeleteTaskRequest';
 import { AllTask, assigned, created } from '../models/AllTask';
+import { DataProviderService } from '../services/data-provider.service';
 
 
 @Component({
@@ -47,7 +48,7 @@ export class ViewTaskComponent implements OnInit {
     this.taskDel.creatorId=3;
   }
 
-  constructor(private taskService:GetTasksService) {}
+  constructor(private taskService:GetTasksService,private dataProvider : DataProviderService) {}
   listTasks: tasks[] = [];
   assigned_task:assigned[]=[];
   created_task:created[]=[];
@@ -153,7 +154,8 @@ export class ViewTaskComponent implements OnInit {
       }
     );
   }
-  moveData(){
-    
+  moveDataForCreatedTask(created_task:created){
+    console.log("edit click "+created_task.taskid);
+    this.dataProvider.setDataForCreatedTask(created_task);
   }
 }

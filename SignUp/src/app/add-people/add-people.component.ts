@@ -34,7 +34,10 @@ export class AddPeopleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllUsers();
+    this.getAllUsersForCreate();
+    //this.getAllUsersForCreateUpdateTask();
+    //this.getAllUsersForCreateUpdateMeeting();
+
   }
 
   dropItem(event: CdkDragDrop<any[]>) {
@@ -56,7 +59,7 @@ export class AddPeopleComponent implements OnInit {
     toList.push(item);
   }
 
-  getAllUsers(){
+  getAllUsersForCreate(){
 
     this.username = sessionStorage.getItem('username');
     this.tok = 'Bearer '+ sessionStorage.getItem('token');
@@ -71,6 +74,12 @@ export class AddPeopleComponent implements OnInit {
         //console.log(sessionStorage.getItem('token'));
       }
     )
+  }
+  getAllUsersForCreateUpdateTask(){
+    
+  }
+  getAllUsersForCreateUpdateMeeting(){
+
   }
 
   addId(arr:People[]){

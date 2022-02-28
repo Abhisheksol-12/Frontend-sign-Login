@@ -20,7 +20,7 @@ export class GetTasksService implements OnInit {
    
   url="http://localhost:8080/api";
   username:any;
-  userid:any
+  userid:any;
   JWT_TOKEN:any;
   userNameId:any;
 
