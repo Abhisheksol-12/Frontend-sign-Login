@@ -13,17 +13,18 @@
          <router-outlet>
 
 <mat-card class="card">
+  
     <div class="row">
         <mat-form-field class="half-row" appearance="outline">
             <mat-label>Task Title</mat-label>
-            <input matInput type="text" placeholder="Enter Task Name" required>
+            <input matInput type="text" [(ngModel)]="task_title" placeholder="Enter Task Name" required>
         </mat-form-field>
     
 
    
         <mat-form-field class="half-row" appearance="outline">
             <mat-label>Description</mat-label>
-            <input matInput type="text" placeholder="Enter Description" required>
+            <input matInput type="text" [(ngModel)]="description" placeholder="Enter Description" required>
         </mat-form-field>
     </div>
     <div class="row">
@@ -31,14 +32,14 @@
             <mat-form-field class="half-row" style="margin-right: 10px;" color="accent"
                 appearance="fill">
                 <mat-label>Start Date</mat-label>
-                <input matInput [matDatepicker]="picker1">
+                <input matInput [matDatepicker]="picker1" [(ngModel)]="start_date">
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
 
             <mat-form-field class="half-row" appearance="fill">
                 <mat-label>start time</mat-label>
-                <input matInput type="time" placeholder="Enter start time">
+                <input matInput type="time" placeholder="Enter start time" [(ngModel)]="start_time">
             </mat-form-field>
         </div>
         <div class="col">
@@ -46,14 +47,14 @@
             <mat-form-field class="half-row" style="margin-right: 10px;" color="accent"
                 appearance="fill">
                 <mat-label>Due Date</mat-label>
-                <input matInput [matDatepicker]="picker2">
+                <input matInput [matDatepicker]="picker2" [(ngModel)]="due_date">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2 color="primary"></mat-datepicker>
             </mat-form-field>
 
             <mat-form-field class="half-row" appearance="fill">
                 <mat-label>due time</mat-label>
-                <input matInput type="time" placeholder="Enter due time">
+                <input matInput type="time" placeholder="Enter due time" [(ngModel)]="due_time">
             </mat-form-field>
         </div>
     </div>
@@ -153,7 +154,7 @@
       </div>
     </div>
   </div>
-  <button type="button" id="updateDetails" class="btn btn-success"   >
+  <button type="button" id="updateDetails" class="btn btn-success" (click)="updateDetails()"  >
     Update Details
  </button>
   
