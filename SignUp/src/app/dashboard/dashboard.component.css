@@ -60,6 +60,7 @@ main{
     border-radius: 7px;
     box-shadow: 1ch;
     box-shadow: 0 0 20px rgba(139, 157, 235, 0.3);
+    background-color: #EDFFEC;
 
     /* grid-column: 1; */
 }
@@ -70,6 +71,8 @@ main{
     border: 1px solid black;
     border-radius: 7px;
     box-shadow: 0 0 20px rgba(139, 157, 235, 0.3);
+    background-color: #EDFFEC;
+
 
 
 }
@@ -79,6 +82,10 @@ main{
     border: 1px solid black;
     border-radius: 7px;
     box-shadow: 0 0 20px rgba(139, 157, 235, 0.3);
+    background-color: #EDFFEC;
+    margin-bottom: 2cm;
+
+
 
 
 }
@@ -88,6 +95,9 @@ main{
     border: 1px solid black;
     border-radius: 7px;
     box-shadow: 0 0 20px rgba(139, 157, 235, 0.3);
+    background-color: #EDFFEC;
+    margin-bottom: 2cm;
+
 
 
 }
