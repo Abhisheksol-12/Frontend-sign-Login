@@ -9,12 +9,12 @@
     <form (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column" class="mytask">
 
       <mat-form-field appearance="fill">
-        <mat-label>Enter Full Name</mat-label>
-        <input [(ngModel)]="user.firstName" name = "firstName" matInput type="text" placeholder="Enter-Name" >
+        <mat-label> Full Name</mat-label>
+        <input [(ngModel)]="user.firstName" name = "firstName" matInput type="text" placeholder="Full Name" >
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>User Email-id </mat-label>
+        <mat-label> Email-id </mat-label>
         <input [(ngModel)]="user.username" name = "username" matInput type="email" placeholder="Enter-Id" >
       </mat-form-field>
 
@@ -24,8 +24,8 @@
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Re-Password</mat-label>
-        <input [(ngModel)]="repassword" name = "repassword" matInput type="password" placeholder="Enter-Password-Again" >
+        <mat-label>Confirm Password</mat-label>
+        <input [(ngModel)]="repassword" name = "repassword" matInput type="password" placeholder="Confirm Password" >
       </mat-form-field>
 
       <div class="text-center">
@@ -35,7 +35,7 @@
     
 
     <p id="para">Already have an account?</p>
-    <a id="para" routerLink="../login" >login</a> 
+    <a id="para" routerLink="../login" >Login</a> 
 
   </mat-card>
 

@@ -49,6 +49,7 @@ import { UpdateMeetingComponent } from './update-meeting/update-meeting.componen
 import { AddUserComponent } from './add-user/add-user.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component'
 import {MatTabsModule} from '@angular/material/tabs';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 // import{ViewTaskComponent} from './view-task/view-task.component'
 
@@ -79,7 +80,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     ViewTaskComponent,
     UpdateMeetingComponent,
     AddUserComponent,
-    ResetPasswordComponent 
+    ResetPasswordComponent,
+    ForgotPasswordComponent 
 
   ],
   imports: [
