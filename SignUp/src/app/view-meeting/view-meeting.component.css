@@ -48,3 +48,47 @@
     border: #041C32;
     text-decoration: underline;
     text-shadow: #041C32;}
+
+
+    :host{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      
+    }
+    
+    mat-drawer{
+        width: 260px;
+        background: rgb(255, 255, 255);
+        /* background-color: white; */
+        
+    }
+    
+    mat-drawer-container{
+        height: 100%;
+    }
+    
+    
+    .content{
+        /* padding: 5px; */
+        margin-top: 5px;
+        height: 400px;
+        width:  450px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        
+    }
+    
+    p {
+        padding: 10px;
+    }
+    
+    /* */
+    
+    *{
+        margin: 0 ; padding: 0; 
+        box-sizing: border-box;
+        /* background: red; */
+    }

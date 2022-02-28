@@ -8,6 +8,8 @@ import { MeetingService } from '../services/meeting.service';
 })
 export class ViewMeetingComponent implements OnInit {
 
+  sideBarOpen: any;
+
   constructor(private meetingService:MeetingService) { }
 
   ngOnInit(): void {
@@ -21,6 +23,11 @@ export class ViewMeetingComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
   }
 
 

@@ -14,6 +14,8 @@ import { AddMeeting } from '../models/AddMeeting';
 })
 export class CreateMeetingDashboardComponent implements OnInit {
 
+  sideBarOpen: any;
+
   TaskFormGroup:any | FormGroup;
   constructor(private _formBuilder: FormBuilder,private datepipe: DatePipe,
     private dataProvider:DataProviderService,private userService:UserService) {}
@@ -86,5 +88,15 @@ export class CreateMeetingDashboardComponent implements OnInit {
       this.task = new AddMeeting();
    }
   
+
+   sideBarToggler()
+   {
+     this.sideBarOpen =!this.sideBarOpen;
+   }
+
+   sub()
+   {
+     alert("your meeting has been created")
+   }
 
 }

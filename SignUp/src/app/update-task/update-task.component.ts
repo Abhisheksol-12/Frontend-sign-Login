@@ -10,6 +10,8 @@ declare var window:any;
 })
 export class UpdateTaskComponent implements OnInit {
 
+  sideBarOpen: any;
+
   constructor() { }
   formModal:any;
   ngOnInit(): void {
@@ -26,6 +28,10 @@ export class UpdateTaskComponent implements OnInit {
     this.formModal.closeModal();
   }
 
- 
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
+  }
+  
 
 }

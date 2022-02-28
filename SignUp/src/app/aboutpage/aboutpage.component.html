@@ -1,65 +1,29 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" routerLink="../dashboard" >Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+<mat-drawer-container>
 
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="aboutpage"> About Us</a>
-        </li>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+         <!-- <mat-drawer mode="side" opened="true"> -->
+         <app-sidenav> </app-sidenav>
+  </mat-drawer>
 
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="../create-task-dashboard"> Create Task </a>
-        </li>
+  <mat-drawer-content>
+
+         <app-header (toggleSidebarForMe)="sideBarToggler()">
+         </app-header>
         
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="../view-task"> View Task </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="../create-meeting-dashboard">Create Meeting</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="../view-meeting">View Meeting</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-
-    
-        <form class="form-inline">
-        <button class="btn btn-danger" style="height: 35px;"  >
-            <li class="nav-item" >
-                <a class="nav-link" routerLink="../login" style="color: white; padding: 2px;">Logout</a>
-              </li>
-          </button>
-          
+        
+         <router-outlet>
          
- </form>
-
-      </ul>
-    </div>
-  </nav>
-
   
 <main>
-    <h1 fxLayoutAlign="center center" style="font-weight: bolder; color: aliceblue; " >About Us</h1>
+    <h1 fxLayoutAlign="center center" style="font-weight: bolder; color: black; " >About Us</h1>
 
     <div class="div1">
         
-   <h1 style="padding: 100px; margin: 10px; color: rgb(255, 255, 255); ">  We power the momentum of modern talent-focused enterprises </h1>
-      <h2 style="color: white;" >We are the momentum that powers your growth</h2>
+   <h1 style="padding: 100px; margin: 10px; color: rgb(10, 10, 10); ">  We power the momentum of modern talent-focused enterprises </h1>
+      <h2 style="color: rgb(10, 10, 10);" >We are the momentum that powers your growth</h2>
 
-   <p  style="padding: 1px;  color: rgb(255, 255, 255); " >
+   <p  style="padding: 1px;  color: rgb(3, 3, 3); " >
 
     Today, with our comprehensive platform ,we serve over 50+ top enterprises across Asia Pacific and power seamless employee experience over thousands of devices.
     Our technology is a reflection of the growing needs of modern, talent-focused enterprises and their increasingly complex HR use cases; of people and business leaders who want technology to do more. We are on a mission to power the Talent Economy with our Tech.
@@ -72,3 +36,12 @@
     </div>
 
 </main>
+
+
+</router-outlet>
+
+</mat-drawer-content>
+
+</mat-drawer-container>
+
+<router-outlet></router-outlet>

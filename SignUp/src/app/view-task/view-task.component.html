@@ -1,3 +1,18 @@
+<mat-drawer-container>
+
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+         <!-- <mat-drawer mode="side" opened="true"> -->
+         <app-sidenav> </app-sidenav>
+  </mat-drawer>
+
+  <mat-drawer-content>
+
+         <app-header (toggleSidebarForMe)="sideBarToggler()">
+         </app-header>
+        
+        
+         <router-outlet>
+
 <mat-tab-group mat-align-tabs="center" >
 <!-- #enddocregion align-start -->
   <mat-tab label="Assigned Tasks" style="font-size: large;" class="label"><h3 class="table-category">Assigned Tasks</h3>
@@ -103,4 +118,10 @@
 </mat-tab-group>
 
 
-  
+</router-outlet>
+
+</mat-drawer-content>
+
+</mat-drawer-container>
+
+<router-outlet></router-outlet>

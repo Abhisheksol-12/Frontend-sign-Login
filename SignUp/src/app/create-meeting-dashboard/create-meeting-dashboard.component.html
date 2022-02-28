@@ -1,4 +1,16 @@
+<mat-drawer-container>
 
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+           <!-- <mat-drawer mode="side" opened="true"> -->
+           <app-sidenav> </app-sidenav>
+    </mat-drawer>
+
+    <mat-drawer-content>
+
+           <app-header (toggleSidebarForMe)="sideBarToggler()">
+           </app-header>
+           
+           <router-outlet>
 
 
 <div class="container" text-center>
@@ -68,7 +80,7 @@
 
                         </div>
                         <div class="col">
-                            <button type="submit" [disabled]="!TaskFormGroup.valid" mat-raised-button color="primary">Create</button>
+                            <button type="submit" [disabled]="!TaskFormGroup.valid" mat-raised-button color="primary" (click)="sub()" >Create</button>
                         </div>
                         <div class="col" style="text-align: end;">
                             <button mat-mini-fab color="warn" matStepperNext >

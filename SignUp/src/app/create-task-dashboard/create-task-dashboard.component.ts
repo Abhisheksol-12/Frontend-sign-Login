@@ -86,6 +86,11 @@ export class CreateTaskDashboardComponent implements OnInit {
 
       this.task = new AddTask();
    }
+
+   sub()
+   {
+     alert("your task has been created")
+   }
   
 }
 
