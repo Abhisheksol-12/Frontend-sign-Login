@@ -38,3 +38,13 @@
       padding:5px;
       box-shadow: rgba(197, 24, 24, 0.5);
   }
+  .table-category{
+      
+      
+    font-size:large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left:2cm;
+    margin-top: 19px;
+    border: #041C32;
+    text-decoration: underline;
+    text-shadow: #041C32;}
