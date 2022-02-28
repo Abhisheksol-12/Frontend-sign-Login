@@ -17,6 +17,11 @@ import { AllTask, assigned, created } from '../models/AllTask';
 })
 export class ViewTaskComponent implements OnInit {
   http!: HttpClient;
+  sideBarOpen: any;
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
+  }
 
   task=new AddTask();
   tempTask(){

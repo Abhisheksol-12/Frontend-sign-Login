@@ -5,6 +5,7 @@
   .container{
       font-family:sans-serif;
       margin-top: 5px;
+      margin-left: 1cm;
   }
   .table-striped{
     border-collapse: collapse;
@@ -19,12 +20,17 @@
     
 
   }
+
+  .label{
+      font-size: x-large;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
   .table-category{
       
       
-      font-size:x-large;
+      font-size:large;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      margin-left:4cm;
+      margin-left:2cm;
       margin-top: 19px;
       border: #041C32;
       text-decoration: underline;
@@ -32,9 +38,9 @@
       
   }
   .table-category2{
-    font-size:x-large;
+    font-size:large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left:4cm;
+    margin-left:2cm;
     margin-top: 25px;
     border: #041C32;
     text-decoration: underline;
@@ -87,5 +93,6 @@ main{
     height: 100vh;
     border: 2px solid black;
 } */
+
 
 

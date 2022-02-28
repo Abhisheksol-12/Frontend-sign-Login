@@ -15,7 +15,7 @@ import { CreatemeetingComponent } from './createmeeting/createmeeting.component'
 import { UnivaboutComponent } from './univabout/univabout.component';
 import { UpdateMeetingComponent } from './update-meeting/update-meeting.component';
 import { AddUserComponent } from './add-user/add-user.component';
-
+import{ResetPasswordComponent} from './reset-password/reset-password.component'
 
 const routes: Routes = [
 
@@ -34,7 +34,9 @@ const routes: Routes = [
  {path: 'createmeeting', component:CreatemeetingComponent },  
   {path: 'univabout' , component:UnivaboutComponent},
   {path:'update-meeting',component:UpdateMeetingComponent},
-  {path:'add-user',component:AddUserComponent}
+  {path:'add-user',component:AddUserComponent},
+  {path:'reset-password',component:ResetPasswordComponent}
+
 
 
 ];
