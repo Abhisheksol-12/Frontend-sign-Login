@@ -5,4 +5,5 @@ export class tasks{
     creationTime: any;
     deadline: any;
     creator: string | any;
+    constructor(){}
 }

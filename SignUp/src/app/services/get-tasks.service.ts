@@ -11,6 +11,7 @@ import { UserService } from './user.service';
 import { DeleteUserFromTask } from '../models/DeleteUserFromTask';
 import { UserToTask } from '../models/UserToTask';
 import { DeleteTaskRequest } from '../models/DeleteTaskRequest';
+import { AllTask } from '../models/AllTask';
 
 @Injectable({
   providedIn: 'root'
@@ -76,7 +77,7 @@ export class GetTasksService implements OnInit {
     const params = new HttpParams().set('userid',this.userid);
     const reqHeader = new HttpHeaders().set('Authorization',this.JWT_TOKEN);
 
-    return this.http.get<UserNameId>(`${this.url}/task/user/`,{params,headers:reqHeader});
+    return this.http.get<AllTask>(`${this.url}/task/user/`,{params,headers:reqHeader});
   }
 ////
   updateTask(task:AddTask){

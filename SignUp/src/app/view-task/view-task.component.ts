@@ -7,6 +7,7 @@ import { AddTask } from '../models/AddTask';
 import { UserToTask } from '../models/UserToTask';
 import { DeleteUserFromTask } from '../models/DeleteUserFromTask';
 import { DeleteTaskRequest } from '../models/DeleteTaskRequest';
+import { AllTask, assigned, created } from '../models/AllTask';
 
 
 @Component({
@@ -31,7 +32,7 @@ export class ViewTaskComponent implements OnInit {
   tempUserAdd(){
     this.userAdd.status='completed';
     this.userAdd.taskId=13;
-    this.userAdd.userId=5;
+    this.userAdd.userId=3;
   }
 
   userdel = new DeleteUserFromTask();
@@ -46,35 +47,24 @@ export class ViewTaskComponent implements OnInit {
     this.taskDel.creatorId=3;
   }
 
-
-
-  //tasks:any;
   constructor(private taskService:GetTasksService) {}
-  listTasks: tasks[] = [];; 
+  listTasks: tasks[] = [];
+  assigned_task:assigned[]=[];
+  created_task:created[]=[];
   userid:any;
-
-  getId(){
-
-  }
-
-  // getdata(){
-  //   this.http.get<any>('http://localhost:8080/api/task?userId=3&taskId=5').subscribe(response =>{
-  //     console.log(response);
-
-  //   })
-  // }
+  allTask!: AllTask;
 
   ngOnInit(): void {
-    this.getTasks();
+    //this.getTasks();
     this.getAllTasks();
-    this.getNotInvited();
+    //this.getNotInvited();
 
      this.tempTask();
     // this.updateTask(this.task);
 
      this.tempUserAdd();
-    // this.addUserToTask(this.userAdd);
-    //this.updateTaskStatus(this.userAdd); not working
+     this.addUserToTask(this.userAdd);
+    this.updateTaskStatus(this.userAdd); //not working
 
 
     this.tempUserDel();
@@ -85,7 +75,7 @@ export class ViewTaskComponent implements OnInit {
 
   }
   getNotInvited(){
-    this.taskService.getNotInvited(17).subscribe(
+    this.taskService.getNotInvited(16).subscribe(
       (response)=>{
         console.log(response);
       },(error) =>{
@@ -106,6 +96,13 @@ export class ViewTaskComponent implements OnInit {
     this.taskService.getAlltask().subscribe(
       (response)=>{
         console.log(response);
+        this.allTask = response;
+        console.log(this.allTask);
+        console.log(this.allTask.assigned[0]);
+        console.log(this.allTask.created[1]);
+        this.assigned_task=this.allTask.assigned;
+        this.created_task=this.allTask.created;
+        
       },(error) =>{
         console.log(error);
       }
@@ -155,5 +152,8 @@ export class ViewTaskComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+  moveData(){
+    
   }
 }

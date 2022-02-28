@@ -1,8 +1,8 @@
 <app-univabout> </app-univabout>
 
-<div class="container" text-center>
-    <mat-card class="card">
-        <mat-stepper labelPosition="bottom" #stepper>
+<div class="container" text-center >
+    <mat-card class="card" >
+        <mat-stepper labelPosition="bottom" #stepper >
             <mat-step [stepControl]="TaskFormGroup">
 
                 <form [formGroup]="TaskFormGroup" class="text-center" (ngSubmit)="onCreateTask()">
