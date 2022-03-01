@@ -9,7 +9,17 @@
     <form (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column" class="mytask">
 
       <mat-form-field appearance="fill">
-        <mat-label> Full Name</mat-label>
+        <mat-label> First Name</mat-label>
+        <input [(ngModel)]="user.firstName" name = "firstName" matInput type="text" placeholder="Full Name" >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Middle Name</mat-label>
+        <input [(ngModel)]="user.firstName" name = "firstName" matInput type="text" placeholder="Full Name" >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Last Name</mat-label>
         <input [(ngModel)]="user.firstName" name = "firstName" matInput type="text" placeholder="Full Name" >
       </mat-form-field>
 

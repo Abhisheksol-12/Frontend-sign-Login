@@ -69,30 +69,3 @@
         height: 100%;
     }
     
-    
-    .content{
-        /* padding: 5px; */
-        margin-top: 5px;
-        height: 400px;
-        width:  450px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        
-        
-    }
-    
-    p {
-        padding: 10px;
-    }
-    
-    /* */
-    
-    *{
-        margin: 0 ; padding: 0; 
-        box-sizing: border-box;
-        /* background: red; */
-    }
-    #newmeet{
-        margin-top: 5px;
-    }
