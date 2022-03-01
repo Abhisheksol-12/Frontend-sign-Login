@@ -22,7 +22,7 @@ export class AddPeopleComponent implements OnInit {
   jwt:any;
 
   selectedList: People[] = [];
-  availableList: any[] = [];
+  availableList: People[] = [];
 
   constructor(private userService:UserService,private dataProvider :DataProviderService) { }
 
@@ -68,7 +68,7 @@ export class AddPeopleComponent implements OnInit {
       (res)=>{
         this.selectedList = res;
         this.addId(this.selectedList);
-        console.warn(this.selectedList);
+        //console.warn(this.selectedList);
       },err=>{
         console.log(err);
         //console.log(sessionStorage.getItem('token'));
@@ -86,7 +86,7 @@ export class AddPeopleComponent implements OnInit {
     for (let i = 0; i < arr.length ; i++) {
       let item = arr[i];
       item.id = i;
-      console.log(item);
+      //console.log(item);
     }
   }
 

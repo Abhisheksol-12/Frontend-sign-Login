@@ -19,6 +19,13 @@ import { DataProviderService } from '../services/data-provider.service';
 export class ViewTaskComponent implements OnInit {
   http!: HttpClient;
   sideBarOpen: any;
+
+  listTasks: tasks[] = [];
+  assigned_task:assigned[]=[];
+  created_task:created[]=[];
+  userid:any;
+  allTask!: AllTask;
+
   sideBarToggler()
   {
     this.sideBarOpen =!this.sideBarOpen;
@@ -54,11 +61,7 @@ export class ViewTaskComponent implements OnInit {
   }
 
   constructor(private taskService:GetTasksService,private dataProvider : DataProviderService) {}
-  listTasks: tasks[] = [];
-  assigned_task:assigned[]=[];
-  created_task:created[]=[];
-  userid:any;
-  allTask!: AllTask;
+ 
 
   ngOnInit(): void {
     //this.getTasks();
@@ -69,8 +72,8 @@ export class ViewTaskComponent implements OnInit {
     // this.updateTask(this.task);
 
      this.tempUserAdd();
-     this.addUserToTask(this.userAdd);
-    this.updateTaskStatus(this.userAdd); //not working
+     //this.addUserToTask(this.userAdd);
+    //this.updateTaskStatus(this.userAdd); //not working
 
 
     this.tempUserDel();
@@ -81,8 +84,9 @@ export class ViewTaskComponent implements OnInit {
 
   }
   getNotInvited(){
-    this.taskService.getNotInvited(16).subscribe(
+    this.taskService.getNotInvited(17).subscribe(
       (response)=>{
+        console.log("non-invitee ==> ");
         console.log(response);
       },(error) =>{
         console.log(error);
@@ -159,6 +163,8 @@ export class ViewTaskComponent implements OnInit {
       }
     );
   }
+
+  
   moveDataForCreatedTask(created_task:created){
     console.log("edit click "+created_task.taskid);
     this.dataProvider.setDataForCreatedTask(created_task);

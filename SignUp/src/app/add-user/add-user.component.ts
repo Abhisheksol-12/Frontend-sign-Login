@@ -22,7 +22,12 @@ export class AddUserComponent implements OnInit {
   jwt:any;
 
   selectedList: People[] = [];
-  availableList: any[] = [];
+  availableList: People[] = [];
+  allList:People[] = [];
+  availableListPre:People[] = [];
+
+  addUser:any[]=[];
+  delUser:any[]=[];
 
   constructor(private userService:UserService,private dataProvider :DataProviderService) { }
 
@@ -57,41 +62,89 @@ export class AddUserComponent implements OnInit {
   }
 
   getAllUsers(){
+    this.selectedList = this.dataProvider.getSelectedList();
+    this.allList = this.dataProvider.getAllList();
+    this.getAvailableList(this.selectedList,this.allList);
 
-    this.username = sessionStorage.getItem('username');
-    this.tok = 'Bearer '+ sessionStorage.getItem('token');
-
-    this.userService.getUser(this.username,this.tok).subscribe(
-      (res)=>{
-        this.selectedList = res;
-        this.addId(this.selectedList);
-        console.warn(this.selectedList);
-      },err=>{
-        console.log(err);
-        //console.log(sessionStorage.getItem('token'));
-      }
-    )
-  }
-
-  addId(arr:People[]){
-    for (let i = 0; i < arr.length ; i++) {
-      let item = arr[i];
-      item.id = i;
-      console.log(item);
-    }
-  }
-
-
-  addPeople(){
-    let result=[];
     for(let i = 0;i<this.availableList.length;i++){
-      let uid = this.availableList[i].userId;
-      result[i] = uid;
+      this.availableListPre[i] = this.availableList[i];
     }
-    console.log(result);
-    this.dataProvider.setUsers(result);
+    this.dataProvider.setAvailableList(this.availableListPre);
 
 
+    this.addId(this.selectedList,this.availableList);
+    // console.log(this.selectedList);
+    // console.log(this.availableList);
+    // console.log(this.allList);
+  }
+
+  addId(arr1:People[],arr2:People[]){
+    let id = 0;
+    for (let i = 0; i < arr1.length ; i++) {
+      let item = arr1[i];
+      item.id = id;
+      id++;
+      //console.log(item);
+    }
+    for (let i = 0; i < arr2.length ; i++) {
+      let item = arr2[i];
+      item.id = id;
+      id++;
+    }
+  }
+
+  getAvailableList(arr1:People[],arr2:People[]){
+    arr1.sort((a,b) => a.userId-b.userId);
+    arr2.sort((a,b) => a.userId-b.userId);
+
+    let i =0,j=0,k=0;
+    while(i<arr1.length && j < arr2.length){
+      if(arr1[i].userId!=arr2[j].userId){
+        this.availableList[k]=arr2[j];
+        j++;
+        k++;
+      }else{
+        i++;
+        j++;
+      }
+    }
+    while(j < arr2.length){
+      this.availableList[k]=arr2[j];
+      k++,j++;
+    }
+  }
+
+  //finalize method
+  addPeople(){
+    let cur = this.availableList;
+    let pre = this.dataProvider.getAvailableList();
+    let i =0,j=0;
+    let del_index = 0;
+    let add_index = 0;
+
+    while(i<cur.length && j < pre.length){
+      if(cur[i].userId < pre[j].userId){
+        this.addUser[add_index++] = cur[i++];
+      }else if(cur[i].userId > pre[j].userId){
+        this.delUser[del_index++] = pre[j++];
+      }else{
+        i++,j++;
+      }
+    }
+
+    while(i<cur.length){
+      this.addUser[add_index++] = cur[i++];
+    }
+
+    while(j<pre.length){
+      this.delUser[del_index++] = pre[j++];
+    }
+
+    this.dataProvider.setAddUser(this.addUser);
+    this.dataProvider.setDelUser(this.delUser);
+    // console.log("----------");
+    // console.log(this.availableList);
+    // console.log(this.dataProvider.getAvailableList());
   }
 
   selectAllPeople(){

@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { created } from '../models/AllTask';
+import { DatePipe } from '@angular/common'
 import { DataProviderService } from '../services/data-provider.service';
+import { People } from '../models/People';
+import { GetTasksService } from '../services/get-tasks.service';
+import { UserService } from '../services/user.service';
+import { AddTask } from '../models/AddTask';
+import { DeleteUserFromTask } from '../models/DeleteUserFromTask';
+import { UserToTask } from '../models/UserToTask';
 
 
 declare var window:any;
@@ -12,8 +19,10 @@ declare var window:any;
 })
 export class UpdateTaskComponent implements OnInit {
 
-  constructor(private dataProvider:DataProviderService) { }
+  constructor(private dataProvider:DataProviderService,private datepipe: DatePipe,
+    private taskService:GetTasksService,private userService:UserService) { }
   formModal:any;
+  
   created_task = new created();
 
   task_title:any;
@@ -22,6 +31,14 @@ export class UpdateTaskComponent implements OnInit {
   start_time:any;
   due_date:any;
   due_time:any;
+
+  
+  leftUserList:any[]=[];
+  rightUserList:any[]=[];
+  AllUserList:any[]=[];
+
+  addUser:any[]=[];
+  delUser:any[]=[];
 
   ngOnInit(): void {
     this.formModal=new window.bootstrap.Modal(
@@ -32,10 +49,35 @@ export class UpdateTaskComponent implements OnInit {
     console.log("created  == "+this.created_task.taskid);
     this.task_title=this.created_task.title;
     this.description=this.created_task.description;
-    this.start_time=this.created_task.creationTime;
-    this.start_date=this.created_task.creationTime;
-    this.due_date=this.created_task.deadline;
-    this.due_time=this.created_task.deadline;
+
+    this.start_time=this.datepipe.transform(this.created_task.creationTime,'HH:mm:ss');
+    this.start_date=this.datepipe.transform(this.created_task.creationTime,'yyyy-MM-dd');
+
+    
+    this.due_time=this.datepipe.transform(this.created_task.deadline,'HH:mm:ss');
+    this.due_date=this.datepipe.transform(this.created_task.deadline,'yyyy-MM-dd');
+    // console.log('starttime===='+this.start_time);
+    // console.log('duetime===='+this.due_time);
+
+    // console.log("==============ng Onit is runing==================");
+
+    //get left list
+    this.getNotInvited(this.created_task.taskid);
+  
+    //get All user list
+    this.getAllUsers();
+
+    
+    //get right list
+    this.getRightPeople();
+  }
+
+  dateToString(date:Date,format:string){
+    this.datepipe.transform(date,format);
+  }
+  dateAndTimeStringToDate(date:string,time:string){
+    let date_comp = date+'T'+time;
+    this.datepipe.transform(date_comp);
   }
 
   openModal(){
@@ -46,14 +88,115 @@ export class UpdateTaskComponent implements OnInit {
     this.formModal.closeModal();
   }
 
+
+  doPrepareSelectedPeopleComponant(){
+  }
+  
+  getAllUsers(){
+    let uname = sessionStorage.getItem('username');
+    let jwt = sessionStorage.getItem('token');
+    this.userService.getUser(uname,'Bearer '+jwt).subscribe(
+      (response)=>{
+        console.log("All user response (2)==>");
+        this.AllUserList=response;
+        this.dataProvider.setAllList(this.AllUserList);
+
+        console.log(this.AllUserList);
+      },(error)=>{
+        console.log(error);
+      }
+    );
+  }
+  getNotInvited(taskId:number){
+    this.taskService.getNotInvited(taskId).subscribe(
+      (response)=>{
+        console.log("non-invitee (1)==> ");
+        this.leftUserList = response;
+        console.log(this.leftUserList);
+
+        this.dataProvider.setSelectedList(this.leftUserList);
+      },(error) =>{
+        console.log(error);
+      }
+    );
+  }
+  getRightPeople(){
+
+  }
+
+  //final update submission method;
   updateDetails(){
     this.created_task.title = this.task_title;
     this.created_task.description = this.description;
-    this.created_task.creationTime = this.start_time;
-    this.created_task.creationTime = this.start_date;
-    this.created_task.deadline = this.due_time;
-    this.created_task.deadline = this.due_date;
+    console.log(this.start_date);
+    
+    let start_d = this.datepipe.transform(this.start_date, 'yyyy-MM-dd')+'T'+this.start_time;
+    let due_d = this.datepipe.transform(this.due_date,'yyyy-MM-dd')+'T'+this.due_time;
+    
+    // this.created_task.creationTime = new Date(start_d); 
+    // this.created_task.deadline = new Date(due_d);
     console.log(this.created_task);
+    let task = new AddTask();
+    this.getTaskForUpdate(task,this.created_task);
+
+    this.addUser = this.dataProvider.getAddUser();
+    this.delUser = this.dataProvider.getDelUser();
+
+    for(let i = 0;i<this.delUser.length;i++){
+      let user = this.delUser[i];
+      let del_user = new DeleteUserFromTask();
+      del_user.taskId = this.created_task.taskid;
+      del_user.userToBeDeleted = user.userId;
+      this.taskService.removeUser(del_user).subscribe(
+        (response)=>{
+          console.log(response);
+        },(error)=>{
+          console.log(error);
+        }
+      )
+    }
+
+    for(let i = 0;i<this.addUser.length;i++){
+      let user = this.addUser[i];
+      let add_user = new UserToTask();
+      add_user.taskId = this.created_task.taskid;
+      add_user.userId = user.userId;
+      add_user.status = this.created_task.status;
+      this.taskService.addUserToTask(add_user).subscribe(
+        (response)=>{
+          console.log(response);
+        },(error)=>{
+          console.log(error);
+        }
+      )
+    }
+    
+
+    this.taskService.updateTask(task).subscribe(
+      (response)=>{
+        console.log(response);
+      },(error)=>{
+        console.log(error);
+      }
+    )
+
+    // console.log(this.dataProvider.getAvailableList());
+    // this.addUser = this.dataProvider.getAddUser();
+    // this.delUser = this.dataProvider.getDelUser();
+    // console.log(this.addUser);
+    // console.log(this.delUser);
+    
+    
+  
+  }
+  getTaskForUpdate(task:AddTask,created_task:created){
+    task.id = created_task.taskid;
+    task.title = created_task.title;
+    task.description = created_task.description;
+    task.creationTime = this.datepipe.transform(created_task.creationTime,'yyyy-MM-dd') + ' '+this.start_time;
+    task.deadline = this.datepipe.transform(created_task.deadline,'yyyy-MM-dd') + ' '+this.due_time;
+    task.creator = created_task.creator;
+
   }
 
 

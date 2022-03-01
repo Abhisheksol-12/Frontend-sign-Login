@@ -65,11 +65,11 @@ export class GetTasksService implements OnInit {
     return this.http.get<UserNameId>(`${this.url}/task/creator/`,{params,headers:reqHeader});
   }
 
-  getNotInvited(taskId:number){
+  getNotInvited(taskId:number):Observable<People[]>{
     const params = new HttpParams().set('userid',this.userid).set('taskId',taskId);
     const reqHeader = new HttpHeaders().set('Authorization',this.JWT_TOKEN);
 
-    return this.http.get<UserNameId>(`${this.url}/task/noninvited/`,{params,headers:reqHeader});
+    return this.http.get<People[]>(`${this.url}/task/noninvited/`,{params,headers:reqHeader});
     
   }
 
