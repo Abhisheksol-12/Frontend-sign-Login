@@ -13,6 +13,7 @@ declare var window:any;
 export class UpdateTaskComponent implements OnInit {
 
   sideBarOpen: any;
+  alert:boolean=false;
 
 
   constructor(private dataProvider:DataProviderService) { }
@@ -62,6 +63,10 @@ export class UpdateTaskComponent implements OnInit {
     this.created_task.deadline = this.due_time;
     this.created_task.deadline = this.due_date;
     console.log(this.created_task);
+    this.alert=true;
+  }
+  closeAlert(){
+    this.alert=false;
   }
 
 

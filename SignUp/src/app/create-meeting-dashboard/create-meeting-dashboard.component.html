@@ -17,6 +17,11 @@
     <mat-card class="card">
         <mat-stepper  labelPosition="bottom" #stepper>
             <mat-step [stepControl]="TaskFormGroup">
+                <div *ngIf="alert" id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Great!</strong> You have successfully scheduled a meeting.
+                    <button type="button" (click)="closeAlert()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                
 
                 <form [formGroup]="TaskFormGroup" class="text-center" (ngSubmit)="onCreateMeeting()">
                     <ng-template matStepLabel>Create Meeting</ng-template>

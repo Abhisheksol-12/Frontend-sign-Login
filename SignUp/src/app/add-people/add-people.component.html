@@ -14,6 +14,10 @@
            <router-outlet>
 
 <div class="container">
+    <div *ngIf="alert" id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>User added</strong> 
+        <button type="button" (click)="closeAlert()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
     <div class="row">
         <div class="col">
             <mat-card>

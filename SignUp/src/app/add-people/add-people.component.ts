@@ -14,7 +14,7 @@ import { ToastServiceService } from '../services/toast-service.service'
 })
 export class AddPeopleComponent implements OnInit {
  
-
+  alert:boolean=false;
   sideBarOpen:any;
 
   dummy = 0;
@@ -105,6 +105,7 @@ export class AddPeopleComponent implements OnInit {
     this.toastService.show('I am a success toast', { classname: 'bg-success text-light', delay: 10000 });
     console.log(result);
     this.dataProvider.setUsers(result);
+    this.alert=true;
 
 
   }
@@ -136,6 +137,11 @@ export class AddPeopleComponent implements OnInit {
   {
     this.sideBarOpen =!this.sideBarOpen;
   }
+  closeAlert(){
+    this.alert=false;
+
+  }
+  
 
 
 }

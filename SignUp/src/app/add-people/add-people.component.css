@@ -85,6 +85,9 @@
   height: 100%;
 
 }
+#alert{
+  margin: 5px;
+}
 .selector{
   margin-bottom: 15px;
 }

@@ -3,6 +3,10 @@
   <!-- <mat-card> </mat-card> -->
 
   <mat-card fxFlex="30">
+    <div *ngIf="alert" id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>SignUp successfull</strong> You can now log in.
+      <button type="button" (click)="closeAlert()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 
     <mat-toolbar fxLayoutAlign="center center" color="primary"> SignUp</mat-toolbar>
 

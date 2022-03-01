@@ -13,6 +13,7 @@ import { AddMeeting } from '../models/AddMeeting';
   styleUrls: ['./create-meeting-dashboard.component.css']
 })
 export class CreateMeetingDashboardComponent implements OnInit {
+  alert:boolean=false;
 
   sideBarOpen: any;
 
@@ -77,6 +78,7 @@ export class CreateMeetingDashboardComponent implements OnInit {
       this.task.meetingAttendees = this.dataProvider.getUsers();
       console.log("============================");
       console.log(this.task);
+      this.alert=true;
 
       this.userService.saveMeeting(this.task).subscribe(
         (response)=>{
@@ -86,6 +88,9 @@ export class CreateMeetingDashboardComponent implements OnInit {
         }
       )
       this.task = new AddMeeting();
+   }
+   closeAlert(){
+     this.alert=false;
    }
   
 
