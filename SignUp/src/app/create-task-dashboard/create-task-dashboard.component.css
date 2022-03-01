@@ -72,7 +72,9 @@ p {
   box-sizing: border-box;
   /* background: red; */
 }
-
+.container{
+  margin-left: 2cm;
+}
 
 
 
