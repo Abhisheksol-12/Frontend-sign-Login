@@ -24,8 +24,6 @@ export class UpdateTaskComponent implements OnInit {
   sideBarOpen: any;
   alert:boolean=false;
 
-
-  constructor(private dataProvider:DataProviderService) { }
   formModal:any;
   
   created_task = new created();
