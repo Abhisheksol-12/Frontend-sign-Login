@@ -11,6 +11,8 @@ import { DataProviderService } from '../services/data-provider.service';
 })
 export class AddUserComponent implements OnInit {
 
+  sideBarOpen: any;
+
 
   dummy = 0;
   textChanged = new EventEmitter<string>();
@@ -168,6 +170,11 @@ export class AddUserComponent implements OnInit {
       j++;
     }
     return result;
+  }
+
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
   }
   
 

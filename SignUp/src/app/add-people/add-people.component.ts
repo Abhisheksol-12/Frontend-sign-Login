@@ -3,6 +3,8 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import { UserService } from '../services/user.service';
 import { People } from '../models/People';
 import { DataProviderService } from '../services/data-provider.service';
+import { ToastServiceService } from '../services/toast-service.service'
+
 
 
 @Component({
@@ -12,6 +14,9 @@ import { DataProviderService } from '../services/data-provider.service';
 })
 export class AddPeopleComponent implements OnInit {
  
+  alert:boolean=false;
+  sideBarOpen:any;
+
   dummy = 0;
   textChanged = new EventEmitter<string>();
   filterTextLeft: string = "";
@@ -24,7 +29,7 @@ export class AddPeopleComponent implements OnInit {
   selectedList: People[] = [];
   availableList: People[] = [];
 
-  constructor(private userService:UserService,private dataProvider :DataProviderService) { }
+  constructor(private userService:UserService,private dataProvider :DataProviderService,public toastService: ToastServiceService) { }
 
   onTextChangedLeft() {
     this.textChanged.emit(this.filterTextLeft);
@@ -97,8 +102,10 @@ export class AddPeopleComponent implements OnInit {
       let uid = this.availableList[i].userId;
       result[i] = uid;
     }
+    this.toastService.show('I am a success toast', { classname: 'bg-success text-light', delay: 10000 });
     console.log(result);
     this.dataProvider.setUsers(result);
+    this.alert=true;
 
 
   }
@@ -125,5 +132,17 @@ export class AddPeopleComponent implements OnInit {
     }
     return result;
   }
+
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
+  }
+  closeAlert(){
+    this.alert=false;
+
+  }
+  
+
+
 }
 

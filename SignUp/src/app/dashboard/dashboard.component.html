@@ -9,12 +9,13 @@
 
               <app-header (toggleSidebarForMe)="sideBarToggler()">
               </app-header>
+              
               <router-outlet>
 
 
                      <main >
                             
-                            <div class="div1">  <P> <mat-icon>edit</mat-icon> HOW TO CREATE TASK ?   </P> 
+                            <!-- <div class="div1">  <P> <mat-icon>edit</mat-icon> HOW TO CREATE TASK ?   </P> 
                                    
                                    <ul style="margin: 15px; padding: 10px;" >
 
@@ -144,7 +145,125 @@
                                           </div>
                                    </mat-card-actions>
 
-                            </div>
+                            </div> -->
+                            <div class="div1">
+                                   <P>
+                                     HOW TO CREATE TASK
+                                     <button
+                                       mat-plain-button
+                                       matTooltip="Add task title.Set a start date and time and due date and time.Add Task Description.Click on create and add more people.
+                                         You are good to go."
+                                       matTooltipPosition="below"
+                                       matTooltipHideDelay="100"
+                                       style="border: 0ch"
+                                       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                                     >
+                                       <mat-icon style="border: 0ch">edit</mat-icon>
+                                     </button>
+                                   </P>
+                         
+                                   <mat-card-actions>
+                                     <div class="text-center">
+                                       <button
+                                         mat-button
+                                         mat-raised-button
+                                         class="btn-warning"
+                                         style="width: 9em; margin-top: 40px"
+                                         routerLink="../create-task-dashboard"
+                                       >
+                                         create-task
+                                       </button>
+                                     </div>
+                                   </mat-card-actions>
+                                 </div>
+                                 <div class="div2">
+                                   <P>
+                                     CREATE MEETINGS
+                                     <button
+                                       mat-plain-button
+                                       matTooltip="Add meeting title.Enter place of meeting.Set a start date and time and end date and time of meeting.
+                                       Add meeting description.Click on create and add more people.You are good to go."
+                                       matTooltipPosition="below"
+                                       matTooltipHideDelay="100"
+                                       style="border: 0ch"
+                                       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                                     >
+                                       <mat-icon style="border: 0ch">edit</mat-icon>
+                                     </button>
+                                   </P>
+                                   <mat-card-actions>
+                                     <div class="text-center">
+                                       <button
+                                         mat-button
+                                         mat-raised-button
+                                         class="btn-warning"
+                                         style="width: 9em; margin-top: 40px"
+                                         routerLink="../create-meeting-dashboard"
+                                       >
+                                         create-meeting
+                                       </button>
+                                     </div>
+                                   </mat-card-actions>
+                                 </div>
+                         
+                                 <div class="div3">
+                                   <P>
+                                     VIEW TASK
+                                     <button
+                                       mat-plain-button
+                                       matTooltip="You can view or edit the task based on your role in task."
+                                       matTooltipPosition="below"
+                                       matTooltipHideDelay="100"
+                                       style="border: 0ch"
+                                       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                                     >
+                                       <mat-icon style="border: 0ch">assignment</mat-icon>
+                                     </button>
+                                   </P>
+                         
+                                   <mat-card-actions>
+                                     <div class="text-center">
+                                       <button
+                                         mat-button
+                                         mat-raised-button
+                                         class="btn btn-success"
+                                         style="width: 9em; margin-top: 40px"
+                                         routerLink="../view-task"
+                                       >
+                                         view-task
+                                       </button>
+                                     </div>
+                                   </mat-card-actions>
+                                 </div>
+                         
+                                 <div class="div4">
+                                   <P>
+                                     VIEW MEETINGS
+                                     <button
+                                       mat-plain-button
+                                       matTooltip="You can view or edit the meeting based on your role in task."
+                                       matTooltipPosition="below"
+                                       matTooltipHideDelay="100"
+                                       style="border: 0ch"
+                                       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                                     >
+                                       <mat-icon style="border: 0ch">assignment</mat-icon>
+                                     </button>
+                                   </P>
+                                   <mat-card-actions>
+                                     <div class="text-center">
+                                       <button
+                                         mat-button
+                                         mat-raised-button
+                                         class="btn btn-success"
+                                         style="width: 9em; margin-top: 40px"
+                                         routerLink="../view-meeting"
+                                       >
+                                         view-meeting
+                                       </button>
+                                     </div>
+                                   </mat-card-actions>
+                                 </div>
                      </main>
                      
               </router-outlet>
@@ -158,6 +277,7 @@
 <router-outlet>
        
 </router-outlet>
+
 
 
 

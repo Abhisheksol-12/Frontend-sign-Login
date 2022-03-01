@@ -2,6 +2,7 @@
     min-height: 60px;
     overflow: hidden;
     display: block;
+    padding: 8px;
   }
   .text-center{
     text-align: center;
@@ -64,6 +65,7 @@
   }
   .icon-logo{
     margin-left: 12px;
+    margin-right: 10px;
     font-size: 30px;
   }
   .fullName{
@@ -71,3 +73,61 @@
     font-weight: bold;
 
   }
+  .category{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #141E61;
+  }
+
+
+:host{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+#alert{
+  margin: 5px;
+}
+.selector{
+  margin-bottom: 15px;
+}
+
+mat-drawer{
+  width: 260px;
+  background: rgb(255, 255, 255);
+  /* background-color: white; */
+  
+}
+
+mat-drawer-container{
+  height: 100%;
+}
+
+
+.content{
+  /* padding: 5px; */
+  margin-top: 5px;
+  height: 400px;
+  width:  450px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+  
+}
+
+p {
+  padding: 10px;
+}
+
+/* */
+
+*{
+  margin: 0 ; padding: 0; 
+  box-sizing: border-box;
+  /* background: red; */
+}
+.col{
+  padding:5px;
+  padding-top: 15px;
+}

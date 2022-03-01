@@ -28,11 +28,43 @@
   font-size: 27px;
   color:blue
 }
-/* .userlist{
-  margin-top: 30px;
-  max-height: 600px;
-  min-height: 500px;
-  height: 600px;
-}   */
+
+
+:host{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+mat-drawer{
+  width: 260px;
+  background: rgb(255, 255, 255);
+  /* background-color: white; */
+  
+}
+
+mat-drawer-container{
+  height: 100%;
+}
+
+
+.content{
+  /* padding: 5px; */
+  margin-top: 5px;
+  height: 400px;
+  width:  450px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+  
+}
+
+/*  */
+
+#alert{
+  margin: 5px;
+}
 
 

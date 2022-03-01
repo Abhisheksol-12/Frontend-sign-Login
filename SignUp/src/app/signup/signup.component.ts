@@ -12,6 +12,7 @@ import { UserService } from '../services/user.service';
 export class SignupComponent implements OnInit {
   user:User = new User();
   repassword='';
+  alert:boolean=false;
 
   constructor(private userService : UserService,private router:Router){}
 
@@ -32,7 +33,7 @@ export class SignupComponent implements OnInit {
 
     }else{
       //save the credentials into database
-
+      this.alert=true;
       console.log("form is submitting");
       this.userService.saveUser(this.user).subscribe(
         response=>{
@@ -46,5 +47,8 @@ export class SignupComponent implements OnInit {
         }
       )
     }
+  }
+  closeAlert(){
+    this.alert=false;
   }
 }

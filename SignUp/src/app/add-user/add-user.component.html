@@ -1,6 +1,16 @@
-<app-univabout>
+<mat-drawer-container>
 
-</app-univabout>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+           <!-- <mat-drawer mode="side" opened="true"> -->
+           <app-sidenav> </app-sidenav>
+    </mat-drawer>
+
+    <mat-drawer-content>
+
+           <app-header (toggleSidebarForMe)="sideBarToggler()">
+           </app-header>
+           
+           <router-outlet>
 
 
 

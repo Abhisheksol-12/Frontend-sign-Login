@@ -5,6 +5,7 @@
   .container{
       font-family:sans-serif;
       margin-top: 12px;
+      margin-left: 2cm;
   }
   .table-striped{
     border-collapse: collapse;
@@ -48,3 +49,23 @@
     border: #041C32;
     text-decoration: underline;
     text-shadow: #041C32;}
+
+
+    :host{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      
+    }
+    
+    mat-drawer{
+        width: 260px;
+        background: rgb(255, 255, 255);
+        /* background-color: white; */
+        
+    }
+    
+    mat-drawer-container{
+        height: 100%;
+    }
+    

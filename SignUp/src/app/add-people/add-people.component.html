@@ -1,9 +1,28 @@
+
+<mat-drawer-container>
+
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+           <!-- <mat-drawer mode="side" opened="true"> -->
+           <app-sidenav> </app-sidenav>
+    </mat-drawer>
+
+    <mat-drawer-content>
+
+           <app-header (toggleSidebarForMe)="sideBarToggler()">
+           </app-header>
+           
+           <router-outlet>
+
 <div class="container">
+    <div *ngIf="alert" id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>User added</strong> 
+        <button type="button" (click)="closeAlert()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
     <div class="row">
         <div class="col">
             <mat-card>
                 <div class="text-center">
-                    <h2>Invite People</h2>
+                    <h2 class="category">Invite People</h2>
                 </div>
                 <div>
                     <mat-form-field class="searchbar" appearance="outline">
@@ -19,7 +38,7 @@
         <div class="col">
             <mat-card>
                 <div class="text-center">
-                    <h2>Selected People</h2>
+                    <h2 class="category">Selected People</h2>
                 </div>
                 <div>
                     <mat-form-field class="searchbar" appearance="outline">
@@ -55,8 +74,8 @@
                         </div>
                     </div>
                 </div>
-                <div style="text-align: end;">
-                    <button mat-raised-button color="warn" (click)="selectAllPeople()" >All </button>
+                <div style="text-align: center; " >
+                    <button mat-raised-button color="warn"  class="selector" (click)="selectAllPeople()" >All </button>
                 </div>
             </mat-card>
         </div>
@@ -81,8 +100,8 @@
                         </div>
                     </div>
                 </div>
-                <div style="text-align:start;">
-                    <button mat-raised-button color="primary" (click)="clearAllPeople()" >clear</button>
+                <div style="text-align:center;">
+                    <button mat-raised-button color="primary" class="selector" (click)="clearAllPeople()" >clear</button>
                 </div>
 
             </mat-card>

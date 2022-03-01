@@ -21,6 +21,11 @@ export class UpdateTaskComponent implements OnInit {
 
   constructor(private dataProvider:DataProviderService,private datepipe: DatePipe,
     private taskService:GetTasksService,private userService:UserService) { }
+  sideBarOpen: any;
+  alert:boolean=false;
+
+
+  constructor(private dataProvider:DataProviderService) { }
   formModal:any;
   
   created_task = new created();
@@ -125,6 +130,11 @@ export class UpdateTaskComponent implements OnInit {
   }
 
   //final update submission method;
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
+  }
+  
   updateDetails(){
     this.created_task.title = this.task_title;
     this.created_task.description = this.description;
@@ -197,6 +207,10 @@ export class UpdateTaskComponent implements OnInit {
     task.deadline = this.datepipe.transform(created_task.deadline,'yyyy-MM-dd') + ' '+this.due_time;
     task.creator = created_task.creator;
 
+    this.alert=true;
+  }
+  closeAlert(){
+    this.alert=false;
   }
 
 

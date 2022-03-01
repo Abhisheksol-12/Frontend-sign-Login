@@ -75,3 +75,31 @@
     margin-top: 35px;
   }
   
+
+
+:host{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+mat-drawer{
+  width: 260px;
+  background: rgb(255, 255, 255);
+  /* background-color: white; */
+  
+}
+
+mat-drawer-container{
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MeetingService } from '../services/meeting.service';
+import { UserToMeeting } from '../models/UserToMeeting';
+
 
 @Component({
   selector: 'app-view-meeting',
@@ -7,6 +9,8 @@ import { MeetingService } from '../services/meeting.service';
   styleUrls: ['./view-meeting.component.css']
 })
 export class ViewMeetingComponent implements OnInit {
+
+  sideBarOpen: any;
 
   constructor(private meetingService:MeetingService) { }
 
@@ -23,5 +27,18 @@ export class ViewMeetingComponent implements OnInit {
     )
   }
 
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
+  }
+  updateMeetingStatus(status:UserToMeeting){
+    this.meetingService.updateMeetingStatus(status).subscribe(
+      (response)=>{
+        console.log(response);
+      },(error) =>{
+        console.log(error);
+      }
+    );
+  }
 
 }

@@ -1,8 +1,28 @@
 
+<mat-drawer-container>
+
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+           <!-- <mat-drawer mode="side" opened="true"> -->
+           <app-sidenav> </app-sidenav>
+    </mat-drawer>
+  
+    <mat-drawer-content>
+  
+           <app-header (toggleSidebarForMe)="sideBarToggler()">
+           </app-header>
+          
+          
+           <router-outlet>
+
+
 <div class="container" text-center >
     <mat-card class="card" >
         <mat-stepper labelPosition="bottom" #stepper >
             <mat-step [stepControl]="TaskFormGroup">
+                <div *ngIf="alert" id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Task added</strong> You have successfully created a task.
+                <button type="button" (click)="closeAlert()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
 
                 <form [formGroup]="TaskFormGroup" class="text-center" (ngSubmit)="onCreateTask()">
                     <ng-template matStepLabel>Create Task</ng-template>
@@ -60,7 +80,7 @@
                             
                         </div>
                         <div class="col">
-                            <button type="submit" [disabled]="!TaskFormGroup.valid" mat-raised-button color="primary">Create</button>
+                            <button type="submit" [disabled]="!TaskFormGroup.valid" mat-raised-button color="primary" (click)="sub()" >  Create</button>
                         </div>
                         <div class="col" style="text-align: end;">
                             <button mat-mini-fab color="warn" matStepperNext >
@@ -103,7 +123,8 @@
                               </button>
                         </div>
                         <div class="col" style="text-align: center;">
-                            <button mat-raised-button color="warn" (click)="onSubmitTask()" (click)="stepper.reset()">Create and reset</button>
+                            <button mat-raised-button color="warn" (click)="onSubmitTask()" data-bs-toggle="modal" (click)="stepper.reset()">Create</button>
+                            
                         </div>
                         <div class="col">
 
@@ -115,3 +136,12 @@
         </mat-stepper>
     </mat-card>
 </div>
+
+</router-outlet>
+
+</mat-drawer-content>
+
+</mat-drawer-container>
+
+<router-outlet></router-outlet>
+

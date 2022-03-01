@@ -3,13 +3,27 @@
   <!-- <mat-card> </mat-card> -->
 
   <mat-card fxFlex="30">
+    <div *ngIf="alert" id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>SignUp successfull</strong> You can now log in.
+      <button type="button" (click)="closeAlert()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 
     <mat-toolbar fxLayoutAlign="center center" color="primary"> SignUp</mat-toolbar>
 
     <form (ngSubmit)="onSubmit()" fxLayoutAlign="stretch" fxLayout="column" class="mytask">
 
       <mat-form-field appearance="fill">
-        <mat-label> Full Name</mat-label>
+        <mat-label> First Name</mat-label>
+        <input [(ngModel)]="user.firstName" name = "firstName" matInput type="text" placeholder="Full Name" >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Middle Name</mat-label>
+        <input [(ngModel)]="user.firstName" name = "firstName" matInput type="text" placeholder="Full Name" >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Last Name</mat-label>
         <input [(ngModel)]="user.firstName" name = "firstName" matInput type="text" placeholder="Full Name" >
       </mat-form-field>
 

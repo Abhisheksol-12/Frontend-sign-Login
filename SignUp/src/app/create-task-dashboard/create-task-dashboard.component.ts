@@ -14,6 +14,7 @@ import { UserNameId } from '../models/userNameId';
 })
 export class CreateTaskDashboardComponent implements OnInit {
 
+  alert:boolean=false;
   TaskFormGroup:any | FormGroup;
   constructor(private _formBuilder: FormBuilder,private datepipe: DatePipe,
     private dataProvider:DataProviderService,private userService:UserService) {}
@@ -74,10 +75,12 @@ export class CreateTaskDashboardComponent implements OnInit {
       this.task.taskAssignees = this.dataProvider.getUsers();
       console.log("============================");
       console.log(this.task);
+      this.alert=true;
 
       this.userService.saveTask(this.task).subscribe(
         (response)=>{
           console.log(response);
+          
         },(error)=>{
           console.log(error);
         }
@@ -85,6 +88,14 @@ export class CreateTaskDashboardComponent implements OnInit {
       
 
       this.task = new AddTask();
+   }
+
+   sub()
+   {
+     alert("your task has been created")
+   }
+   closeAlert(){
+     this.alert=false;
    }
   
 }
