@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MeetingService } from '../services/meeting.service';
 import { UserToMeeting } from '../models/UserToMeeting';
 import { AllMeetings, assigned, created } from '../models/AllMeeting';
+import { DeleteMeetingRequest } from '../models/DeleteMeetingRequest';
 
 
 @Component({
@@ -46,8 +47,11 @@ export class ViewMeetingComponent implements OnInit {
   {
     this.sideBarOpen =!this.sideBarOpen;
   }
-  updateMeetingStatus(status:UserToMeeting){
-    this.meetingService.updateMeetingStatus(status).subscribe(
+  deleteMeeting(creatorId:number,meetingId:number){
+    let meet = new DeleteMeetingRequest();
+    meet.meetingId = meetingId;
+    meet.creatorId = creatorId;
+    this.meetingService.removeMeeting(meet).subscribe(
       (response)=>{
         console.log(response);
       },(error) =>{
@@ -56,9 +60,6 @@ export class ViewMeetingComponent implements OnInit {
     );
   }
   acceptStatus(userId:number,meetId:number){
-    // userId:any;
-    // meetingId:any;
-    // status:any;
     let status = new UserToMeeting();
     status.meetingId = meetId;
     status.userId = userId;
