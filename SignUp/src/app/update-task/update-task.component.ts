@@ -49,20 +49,15 @@ export class UpdateTaskComponent implements OnInit {
     );
 
     this.created_task = this.dataProvider.getDataForCreatedTask();
-    console.log("created  == "+this.created_task.taskid);
     this.task_title=this.created_task.title;
     this.description=this.created_task.description;
 
-    this.start_time=this.datepipe.transform(this.created_task.creationTime,'HH:mm:ss');
+    this.start_time=this.datepipe.transform(this.created_task.creationTime,'HH:mm');
     this.start_date=this.datepipe.transform(this.created_task.creationTime,'yyyy-MM-dd');
 
     
-    this.due_time=this.datepipe.transform(this.created_task.deadline,'HH:mm:ss');
+    this.due_time=this.datepipe.transform(this.created_task.deadline,'HH:mm');
     this.due_date=this.datepipe.transform(this.created_task.deadline,'yyyy-MM-dd');
-    // console.log('starttime===='+this.start_time);
-    // console.log('duetime===='+this.due_time);
-
-    // console.log("==============ng Onit is runing==================");
 
     //get left list
     this.getNotInvited(this.created_task.taskid);
@@ -71,16 +66,6 @@ export class UpdateTaskComponent implements OnInit {
     this.getAllUsers();
 
     
-    //get right list
-    this.getRightPeople();
-  }
-
-  dateToString(date:Date,format:string){
-    this.datepipe.transform(date,format);
-  }
-  dateAndTimeStringToDate(date:string,time:string){
-    let date_comp = date+'T'+time;
-    this.datepipe.transform(date_comp);
   }
 
   openModal(){
@@ -94,17 +79,18 @@ export class UpdateTaskComponent implements OnInit {
 
   doPrepareSelectedPeopleComponant(){
   }
+
   
   getAllUsers(){
     let uname = sessionStorage.getItem('username');
     let jwt = sessionStorage.getItem('token');
     this.userService.getUser(uname,'Bearer '+jwt).subscribe(
       (response)=>{
-        console.log("All user response (2)==>");
+        //console.log("All user response (2)==>");
         this.AllUserList=response;
         this.dataProvider.setAllList(this.AllUserList);
 
-        console.log(this.AllUserList);
+        //console.log(this.AllUserList);
       },(error)=>{
         console.log(error);
       }
@@ -113,18 +99,15 @@ export class UpdateTaskComponent implements OnInit {
   getNotInvited(taskId:number){
     this.taskService.getNotInvited(taskId).subscribe(
       (response)=>{
-        console.log("non-invitee (1)==> ");
+        //console.log("non-invitee (1)==> ");
         this.leftUserList = response;
-        console.log(this.leftUserList);
+        //console.log(this.leftUserList);
 
         this.dataProvider.setSelectedList(this.leftUserList);
       },(error) =>{
         console.log(error);
       }
     );
-  }
-  getRightPeople(){
-
   }
 
   //final update submission method;
@@ -136,17 +119,26 @@ export class UpdateTaskComponent implements OnInit {
   updateDetails(){
     this.created_task.title = this.task_title;
     this.created_task.description = this.description;
-    console.log(this.start_date);
     
-    let start_d = this.datepipe.transform(this.start_date, 'yyyy-MM-dd')+'T'+this.start_time;
-    let due_d = this.datepipe.transform(this.due_date,'yyyy-MM-dd')+'T'+this.due_time;
-    
-    // this.created_task.creationTime = new Date(start_d); 
-    // this.created_task.deadline = new Date(due_d);
-    console.log(this.created_task);
     let task = new AddTask();
     this.getTaskForUpdate(task,this.created_task);
 
+    this.taskService.updateTask(task).subscribe(
+      (response)=>{
+        console.log("update succes ==>")
+        console.log(this.created_task);
+        console.log(task);
+        console.log(response);
+      },(error)=>{
+        console.log(error);
+        console.log("update error ==>")
+        console.log(this.created_task);
+        console.log(task);
+      }
+    )
+
+  }
+  finalizeUsers(){
     this.addUser = this.dataProvider.getAddUser();
     this.delUser = this.dataProvider.getDelUser();
 
@@ -178,31 +170,13 @@ export class UpdateTaskComponent implements OnInit {
         }
       )
     }
-    
-
-    this.taskService.updateTask(task).subscribe(
-      (response)=>{
-        console.log(response);
-      },(error)=>{
-        console.log(error);
-      }
-    )
-
-    // console.log(this.dataProvider.getAvailableList());
-    // this.addUser = this.dataProvider.getAddUser();
-    // this.delUser = this.dataProvider.getDelUser();
-    // console.log(this.addUser);
-    // console.log(this.delUser);
-    
-    
-  
   }
   getTaskForUpdate(task:AddTask,created_task:created){
     task.id = created_task.taskid;
     task.title = created_task.title;
     task.description = created_task.description;
-    task.creationTime = this.datepipe.transform(created_task.creationTime,'yyyy-MM-dd') + ' '+this.start_time;
-    task.deadline = this.datepipe.transform(created_task.deadline,'yyyy-MM-dd') + ' '+this.due_time;
+    task.creationTime = this.datepipe.transform(this.start_date,'yyyy-MM-dd') + ' '+this.start_time;
+    task.deadline = this.datepipe.transform(this.due_date,'yyyy-MM-dd') + ' '+this.due_time;
     task.creator = created_task.creator;
 
     this.alert=true;
@@ -211,9 +185,6 @@ export class UpdateTaskComponent implements OnInit {
     this.alert=false;
   }
 
-
-
-
- 
+  
 
 }

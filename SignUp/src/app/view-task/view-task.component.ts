@@ -31,15 +31,6 @@ export class ViewTaskComponent implements OnInit {
     this.sideBarOpen =!this.sideBarOpen;
   }
 
-  task=new AddTask();
-  tempTask(){
-    this.task.id = 17;
-    this.task.title='my task new';
-    this.task.creator=3;
-    this.task.creationTime='2022-02-25 00:00'
-    this.task.deadline='2022-03-25 11:11'
-    this.task.description='do it in one month';
-  }
 
   userAdd = new UserToTask();
   tempUserAdd(){
@@ -48,17 +39,6 @@ export class ViewTaskComponent implements OnInit {
     this.userAdd.userId=3;
   }
 
-  userdel = new DeleteUserFromTask();
-  tempUserDel(){
-    this.userdel.taskId=17;
-    this.userdel.userToBeDeleted=12;
-  }
-
-  taskDel = new DeleteTaskRequest();
-  tempTaskDel(){
-    this.taskDel.taskId=13;
-    this.taskDel.creatorId=3;
-  }
 
   constructor(private taskService:GetTasksService,private dataProvider : DataProviderService) {}
  
@@ -68,19 +48,8 @@ export class ViewTaskComponent implements OnInit {
     this.getAllTasks();
     //this.getNotInvited();
 
-     this.tempTask();
-    // this.updateTask(this.task);
-
      this.tempUserAdd();
-     //this.addUserToTask(this.userAdd);
     //this.updateTaskStatus(this.userAdd); //not working
-
-
-    this.tempUserDel();
-    //this.removeUser(this.userdel);
-
-    this.tempTaskDel();
-    //this.removeTask(this.taskDel);
 
   }
   getNotInvited(){
@@ -118,16 +87,9 @@ export class ViewTaskComponent implements OnInit {
       }
     );
   }
-  updateTask(task:AddTask){
-    this.taskService.updateTask(task).subscribe(
-      (response)=>{
-        console.log(response);
-      },(error) =>{
-        console.log(error);
-      }
-    );
-  }
   updateTaskStatus(status:UserToTask){
+    
+  
     this.taskService.updateTaskStatus(status).subscribe(
       (response)=>{
         console.log(response);
@@ -136,30 +98,51 @@ export class ViewTaskComponent implements OnInit {
       }
     );
   }
-  addUserToTask(user:UserToTask){
-    this.taskService.addUserToTask(user).subscribe(
+
+  updateStatusComplete(taskid:number,creator:number){
+    let userStatus = new UserToTask();
+    userStatus.status='completed';
+    userStatus.taskId=taskid;
+    userStatus.userId=creator;
+    this.taskService.updateTaskStatus(userStatus).subscribe(
       (response)=>{
         console.log(response);
+        console.log("user status succes==>");
       },(error) =>{
         console.log(error);
+        console.log("user status error==>")
       }
     );
   }
-  removeUser(user:DeleteUserFromTask){
-    this.taskService.removeUser(user).subscribe(
+  updateStatusInProgress(taskid:number,creator:number){
+    let userStatus = new UserToTask();
+    userStatus.status='In Progress';
+    userStatus.taskId=taskid;
+    userStatus.userId=creator;
+    this.taskService.updateTaskStatus(userStatus).subscribe(
       (response)=>{
         console.log(response);
+        console.log("user status succes==>");
       },(error) =>{
         console.log(error);
+        console.log("user status error==>")
       }
     );
   }
-  removeTask(task:DeleteTaskRequest){
-    this.taskService.removeTask(task).subscribe(
+
+  deleteTask(taskid:number,creator:number){
+    let taskToBeDeleted = new DeleteTaskRequest();
+    taskToBeDeleted.taskId = taskid;
+    taskToBeDeleted.creatorId = creator;
+    this.taskService.removeTask(taskToBeDeleted).subscribe(
       (response)=>{
         console.log(response);
+        
+        console.log("deleted succesfull===>")
       },(error) =>{
+        console.log("error in delete task ===>")
         console.log(error);
+
       }
     );
   }
@@ -168,5 +151,9 @@ export class ViewTaskComponent implements OnInit {
   moveDataForCreatedTask(created_task:created){
     console.log("edit click "+created_task.taskid);
     this.dataProvider.setDataForCreatedTask(created_task);
+  }
+  moveDataForShow(show_created_task:created){
+    console.log("edit click "+show_created_task.taskid);
+    this.dataProvider.setDataForShowTask(show_created_task);
   }
 }

@@ -5,7 +5,7 @@ export interface AllTask{
     created:created[];
 }
 
-export class assigned extends tasks{
+export class assigned extends tasks{ 
     creatorName: string|any;
     status: string|any;
     userid: number|any;

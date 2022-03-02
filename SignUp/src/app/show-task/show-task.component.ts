@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { created } from '../models/AllTask';
+import { DataProviderService } from '../services/data-provider.service';
 
 @Component({
   selector: 'app-show-task',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-task.component.css']
 })
 export class ShowTaskComponent implements OnInit {
-
-  constructor() { }
+  task = new created();
+  constructor(private dataProvider : DataProviderService) { } 
 
   ngOnInit(): void {
+    this.task = this.dataProvider.getDataForShowTask();
   }
 
 }

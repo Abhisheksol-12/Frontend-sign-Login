@@ -1,5 +1,5 @@
 export class tasks{
-    taskid: number | any;
+    taskid: number | any; 
     title: string | any;
     description: string | any;
     creationTime: any;

@@ -17,9 +17,18 @@ export class DataProviderService {
 
   private created_task:any;
   private assigned_task:any;
+
+  private show_created_task:any;
   
 
   constructor() { }
+
+  setDataForShowTask(task:created){
+    this.show_created_task = task;
+  }
+  getDataForShowTask(){
+    return this.show_created_task;
+  }
 
   setAddUser(addUser:People[]){
     this.addUser = addUser;
