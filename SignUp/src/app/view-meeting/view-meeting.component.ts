@@ -55,6 +55,36 @@ export class ViewMeetingComponent implements OnInit {
       }
     );
   }
+  acceptStatus(userId:number,meetId:number){
+    // userId:any;
+    // meetingId:any;
+    // status:any;
+    let status = new UserToMeeting();
+    status.meetingId = meetId;
+    status.userId = userId;
+    status.status = "Accepted"
+
+    this.meetingService.updateMeetingStatus(status).subscribe(
+      (response)=>{
+        console.log(response);
+      },(error) =>{
+        console.log(error);
+      }
+    );
+  }
+  declineStatus(userId:number,meetId:number){
+    let status = new UserToMeeting();
+    status.meetingId = meetId;
+    status.userId = userId;
+    status.status = "Declined"
+    this.meetingService.updateMeetingStatus(status).subscribe(
+      (response)=>{
+        console.log(response);
+      },(error) =>{
+        console.log(error);
+      }
+    );
+  }
   acceptMeeting(meetingId:number,creator:number)
   {
     let userStatus =new UserToMeeting();
