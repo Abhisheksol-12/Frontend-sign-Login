@@ -9,10 +9,15 @@ import { DataProviderService } from '../services/data-provider.service';
 })
 export class ShowTaskComponent implements OnInit {
   task = new created();
+  sideBarOpen: any;
+
   constructor(private dataProvider : DataProviderService) { } 
 
   ngOnInit(): void {
     this.task = this.dataProvider.getDataForShowTask();
   }
-
+  sideBarToggler()
+  {
+    this.sideBarOpen =!this.sideBarOpen;
+  }
 }

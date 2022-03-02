@@ -51,7 +51,7 @@
                             </mat-form-field>
 
                             <mat-form-field class="half-width" appearance="fill">
-                                <mat-label>start time</mat-label>
+                                <mat-label>Start time</mat-label>
                                 <input matInput type="time" class="icon-logo" placeholder="Enter start time" formControlName="startTime" required>
                             </mat-form-field>
                         </div>
@@ -66,7 +66,7 @@
                             </mat-form-field>
 
                             <mat-form-field class="half-width" appearance="fill">
-                                <mat-label>due time</mat-label>
+                                <mat-label>Due time</mat-label>
                                 <input matInput type="time" class="icon-logo" placeholder="Enter due time" formControlName="dueTime" required>
                             </mat-form-field>
                         </div>
@@ -74,7 +74,7 @@
 
                     <div class="form-group" class="row">
                         <mat-form-field class="full-width" appearance="outline">
-                            <mat-label>Discription</mat-label>
+                            <mat-label>Description</mat-label>
                             <textarea matInput placeholder="Enter Discription" formControlName="discription" required></textarea>
                         </mat-form-field>
                     </div>
@@ -84,9 +84,9 @@
                         <div class="col">
 
                         </div>
-                        <div class="col">
+                        <!-- <div class="col">
                             <button type="submit" [disabled]="!TaskFormGroup.valid" mat-raised-button color="primary" (click)="sub()" >Create</button>
-                        </div>
+                        </div> -->
                         <div class="col" style="text-align: end;">
                             <button mat-mini-fab color="warn" matStepperNext >
                                 <mat-icon >keyboard_arrow_right</mat-icon>
@@ -107,15 +107,15 @@
                           </button>
                     </div>
                     <div class="col" style="text-align: end;">
-                        <button mat-mini-fab color="warn" matStepperNext >
-                            <mat-icon >keyboard_arrow_right</mat-icon>
+                        <button mat-raised-button color="warn" (click)="onSubmitTask()" routerLink="../view-meeting" matStepperNext >Create
+                            <!-- <mat-icon >keyboard_arrow_right</mat-icon> -->
                           </button>
                     </div>
                 </div>
                     
             </mat-step>
             
-            <mat-step>
+            <!-- <mat-step>
                 <ng-template matStepLabel>Done</ng-template>
                 <div class="container" style="text-align: center;">
                     <div class="row">
@@ -128,7 +128,7 @@
                               </button>
                         </div>
                         <div class="col" style="text-align: center;">
-                            <button mat-raised-button color="warn" (click)="onSubmitTask()" (click)="stepper.reset()">Create and reset</button>
+                            <button mat-raised-button color="warn" (click)="onSubmitTask()" (click)="stepper.reset()">Create</button>
                         </div>
                         <div class="col">
 
@@ -136,7 +136,7 @@
                     </div>
                 </div>
                 
-            </mat-step>
+            </mat-step> -->
         </mat-stepper>
     </mat-card>
 </div>

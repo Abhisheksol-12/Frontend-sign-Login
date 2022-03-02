@@ -22,7 +22,7 @@ export class ViewMeetingComponent implements OnInit {
   constructor(private meetingService:MeetingService) { }
 
   ngOnInit(): void {
-    this.getAllMeetings(); 
+    this.getAllMeetings();
   }
   getAllMeetings(){
     this.meetingService.getAllMeeting().subscribe(
@@ -55,5 +55,23 @@ export class ViewMeetingComponent implements OnInit {
       }
     );
   }
+  acceptMeeting(meetingId:number,creator:number)
+  {
+    let userStatus =new UserToMeeting();
+    userStatus.status='Accept';
+    userStatus.meetingId=meetingId;
+    userStatus.userId=creator;
+    this.meetingService.updateMeetingStatus(userStatus).subscribe(
+      (response)=>{
+        console.log(response);
+        console.log("user status succes==>");
+      },(error) =>{
+        console.log(error);
+        console.log("user status error==>")
+      }
+    );
+ }
+
+ 
 
 }
