@@ -3,6 +3,7 @@ import { MeetingService } from '../services/meeting.service';
 import { UserToMeeting } from '../models/UserToMeeting';
 import { AllMeetings, assigned, created } from '../models/AllMeeting';
 import { DeleteMeetingRequest } from '../models/DeleteMeetingRequest';
+import { DataProviderMeetService } from '../services/data-provider-meet.service';
 
 
 @Component({
@@ -20,11 +21,18 @@ export class ViewMeetingComponent implements OnInit {
   userid:any;
   allMeeting!: AllMeetings;
 
-  constructor(private meetingService:MeetingService) { }
+  constructor(private meetingService:MeetingService,private dataProviderMeeting:DataProviderMeetService) { }
 
   ngOnInit(): void {
     this.getAllMeetings();
   }
+
+  moveDataForCreatedMeet(created_meet:created){
+    console.log("edit click "+created_meet.meetingid);
+    this.dataProviderMeeting.setDataForCreatedMeet(created_meet);
+  }
+
+
   getAllMeetings(){
     this.meetingService.getAllMeeting().subscribe(
       (response)=>{
@@ -33,16 +41,11 @@ export class ViewMeetingComponent implements OnInit {
         this.allMeeting = response;
         this.created_meet = this.allMeeting.created;
         this.assigned_meet = this.allMeeting.assigned;
-        // console.log(this.allMeeting);
-        // console.log(this.created_meet);
-        // console.log(this.assigned_meet);
-        // console.log("+++++++");
       },(error)=>{
         console.log(error);
       }
     )
   }
-
   sideBarToggler()
   {
     this.sideBarOpen =!this.sideBarOpen;
