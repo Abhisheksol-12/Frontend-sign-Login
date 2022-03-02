@@ -11,6 +11,7 @@ import { UserToMeeting } from '../models/UserToMeeting';
 export class ViewMeetingComponent implements OnInit {
 
   sideBarOpen: any;
+  
 
   constructor(private meetingService:MeetingService) { }
 
