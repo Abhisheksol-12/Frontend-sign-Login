@@ -7,7 +7,9 @@ declare var window:any;
   styleUrls: ['./update-meeting.component.css']
 })
 export class UpdateMeetingComponent implements OnInit {
+  sideBarOpen:any;
   constructor() { }
+
   formModal:any;
   ngOnInit(): void {
     this.formModal=new window.bootstrap.Modal(
@@ -21,6 +23,10 @@ export class UpdateMeetingComponent implements OnInit {
 
   closeModal(){
     this.formModal.closeModal();
+  }
+
+  sideBarToggler(){
+    this.sideBarOpen =!this.sideBarOpen;
   }
 
 }

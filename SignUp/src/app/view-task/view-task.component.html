@@ -30,6 +30,7 @@
             <th>Action</th>
           </tr>
           </thead>
+
           <tbody class="table-text"> 
           <tr *ngFor="let task of assigned_task">
             <td><span>{{task.taskid}}</span></td>
@@ -66,7 +67,9 @@
           </tbody>
         </table>
         
-      </div></mat-tab>
+      </div>
+    
+    </mat-tab>
   <mat-tab label="Tasks Created by me">
     <div class="container">
         <table class="table table-bordered table-striped">

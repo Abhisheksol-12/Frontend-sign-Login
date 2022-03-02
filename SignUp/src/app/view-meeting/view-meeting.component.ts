@@ -11,12 +11,11 @@ import { UserToMeeting } from '../models/UserToMeeting';
 export class ViewMeetingComponent implements OnInit {
 
   sideBarOpen: any;
-  
 
   constructor(private meetingService:MeetingService) { }
 
   ngOnInit(): void {
-    this.getAllMeetings(); 
+    this.getAllMeetings();
   }
   getAllMeetings(){
     this.meetingService.getAllMeeting().subscribe(
@@ -41,5 +40,7 @@ export class ViewMeetingComponent implements OnInit {
       }
     );
   }
+
+ 
 
 }
