@@ -31,15 +31,6 @@ export class ViewTaskComponent implements OnInit {
     this.sideBarOpen =!this.sideBarOpen;
   }
 
-
-  userAdd = new UserToTask();
-  tempUserAdd(){
-    this.userAdd.status='completed';
-    this.userAdd.taskId=13;
-    this.userAdd.userId=3;
-  }
-
-
   constructor(private taskService:GetTasksService,private dataProvider : DataProviderService) {}
  
 
@@ -47,9 +38,6 @@ export class ViewTaskComponent implements OnInit {
     //this.getTasks();
     this.getAllTasks();
     //this.getNotInvited();
-
-     this.tempUserAdd();
-    //this.updateTaskStatus(this.userAdd); //not working
 
   }
   getNotInvited(){
@@ -82,17 +70,6 @@ export class ViewTaskComponent implements OnInit {
         this.assigned_task=this.allTask.assigned;
         this.created_task=this.allTask.created;
         
-      },(error) =>{
-        console.log(error);
-      }
-    );
-  }
-  updateTaskStatus(status:UserToTask){
-    
-  
-    this.taskService.updateTaskStatus(status).subscribe(
-      (response)=>{
-        console.log(response);
       },(error) =>{
         console.log(error);
       }
