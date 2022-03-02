@@ -10,6 +10,7 @@
 #addUsers{
     max-width: max-content;
     margin-left: 10px;
+    height: 40px;
 }
 #deleteUser{
     max-width: max-content;
