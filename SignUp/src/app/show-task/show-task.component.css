@@ -54,3 +54,30 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #270082;
 }
+.conatiner{
+    max-width: fit-content;
+
+}
+mat-drawer{
+    width: 260px;
+    background: rgb(255, 255, 255);
+    /* background-color: white; */
+    
+}
+
+mat-drawer-container{
+    height: 100%;
+}
+
+
+.content{
+    /* padding: 5px; */
+    margin-top: 5px;
+    height: 400px;
+    width:  450px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    
+}
