@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MeetingService } from '../services/meeting.service';
 import { UserToMeeting } from '../models/UserToMeeting';
+import { AllMeetings, assigned, created } from '../models/AllMeeting';
 
 
 @Component({
@@ -11,7 +12,12 @@ import { UserToMeeting } from '../models/UserToMeeting';
 export class ViewMeetingComponent implements OnInit {
 
   sideBarOpen: any;
-  
+
+  //listTasks: tasks[] = [];
+  assigned_meet:assigned[]=[];
+  created_meet:created[]=[];
+  userid:any;
+  allMeeting!: AllMeetings;
 
   constructor(private meetingService:MeetingService) { }
 
@@ -21,7 +27,15 @@ export class ViewMeetingComponent implements OnInit {
   getAllMeetings(){
     this.meetingService.getAllMeeting().subscribe(
       (response)=>{
+        console.log("+++++");
         console.log(response);
+        this.allMeeting = response;
+        this.created_meet = this.allMeeting.created;
+        this.assigned_meet = this.allMeeting.assigned;
+        // console.log(this.allMeeting);
+        // console.log(this.created_meet);
+        // console.log(this.assigned_meet);
+        // console.log("+++++++");
       },(error)=>{
         console.log(error);
       }

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AddMeeting } from '../models/AddMeeting';
+import { AllMeetings } from '../models/AllMeeting';
 import { DeleteMeetingRequest } from '../models/DeleteMeetingRequest';
 import { DeleteUserFromMeeting } from '../models/DeleteUserFromMeeting';
 import { UserNameId } from '../models/userNameId';
@@ -54,11 +55,11 @@ export class MeetingService {
     return this.http.get<UserNameId>(`${this.url}/meeting/noninvited`,{params,headers:reqHeader});
     
   }
-  getAllMeeting(){
+  getAllMeeting(){ 
     const params = new HttpParams().set('userid',this.userid);
     const reqHeader = new HttpHeaders().set('Authorization',this.JWT_TOKEN);
 
-    return this.http.get<UserNameId>(`${this.url}/meeting/user`,{params,headers:reqHeader});
+    return this.http.get<AllMeetings>(`${this.url}/meeting/user`,{params,headers:reqHeader});
   }
   updateMeeting(meeting:AddMeeting){
     const params = new HttpParams().set('userid',this.userid);
