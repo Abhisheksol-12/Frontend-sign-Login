@@ -62,8 +62,12 @@
             </mat-form-field>
         </div>
     </div>
+    
 
 <div class="row"> 
+  <button type="button" id="updateDetails" class="btn btn-success" (click)="updateDetails()"  >
+    Update Details
+ </button>
 
         <!-- Button trigger modal -->
  <button type="button" id="addUsers" class="btn btn-primary" (click)="moveToAddUser()">
@@ -113,9 +117,9 @@
     </div>
   </div>
 
- <button type="button" id="addUsers" class="btn btn-primary" (click)="finalizeUsers()" >
+  <button type="button" id="addUsers" class="btn btn-primary" (click)="finalizeUsers()" >
   Finalize Users
-</button>
+  </button>
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -158,9 +162,9 @@
       </div>
     </div>
   </div>
-  <button type="button" id="updateDetails" class="btn btn-success" (click)="updateDetails()"  >
+  <!-- <button type="button" id="updateDetails" class="btn btn-success" (click)="updateDetails()"  >
     Update Details
- </button>
+ </button> -->
   
 
 </div>

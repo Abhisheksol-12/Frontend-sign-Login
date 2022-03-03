@@ -127,6 +127,7 @@ export class UpdateTaskComponent implements OnInit {
     
     let task = new AddTask();
     this.getTaskForUpdate(task,this.created_task);
+    
 
     this.taskService.updateTask(task).subscribe(
       (response)=>{
@@ -134,6 +135,7 @@ export class UpdateTaskComponent implements OnInit {
         console.log(this.created_task);
         console.log(task);
         console.log(response);
+        
       },(error)=>{
         console.log(error);
         console.log("update error ==>")
@@ -141,6 +143,7 @@ export class UpdateTaskComponent implements OnInit {
         console.log(task);
       }
     )
+    this.alert=true
 
   }
   finalizeUsers(){

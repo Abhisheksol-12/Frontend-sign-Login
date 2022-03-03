@@ -15,6 +15,7 @@ import { DataProviderService } from '../services/data-provider.service';
 export class ViewMeetingComponent implements OnInit {
 
   sideBarOpen: any;
+  buttonDisabled:boolean=false;
 
   //listTasks: tasks[] = [];
   assigned_meet:assigned[]=[];
@@ -69,6 +70,7 @@ export class ViewMeetingComponent implements OnInit {
     status.meetingId = meetId;
     status.userId = userId;
     status.status = "Accepted"
+    this.buttonDisabled=true
 
     this.meetingService.updateMeetingStatus(status).subscribe(
       (response)=>{
@@ -83,6 +85,8 @@ export class ViewMeetingComponent implements OnInit {
     status.meetingId = meetId;
     status.userId = userId;
     status.status = "Declined"
+    this.buttonDisabled=true
+
     this.meetingService.updateMeetingStatus(status).subscribe(
       (response)=>{
         console.log(response);

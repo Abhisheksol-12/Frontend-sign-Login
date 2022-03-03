@@ -8,8 +8,8 @@
     max-width: 50%;
 }
 #addUsers{
-    max-width: max-content;
-    margin-left: 10px;
+    max-width:3cm;
+    margin-left: 8px;
     height: 40px;
 }
 #deleteUser{
@@ -22,6 +22,7 @@
 #updateDetails{
     padding: 3px;
     margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 
