@@ -1,9 +1,11 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AddMeeting } from '../models/AddMeeting';
 import { AllMeetings } from '../models/AllMeeting';
 import { DeleteMeetingRequest } from '../models/DeleteMeetingRequest';
 import { DeleteUserFromMeeting } from '../models/DeleteUserFromMeeting';
+import { People } from '../models/People';
 import { UserNameId } from '../models/userNameId';
 import { UserToMeeting } from '../models/UserToMeeting';
 import { UserService } from './user.service';
@@ -48,11 +50,11 @@ export class MeetingService {
 
     return this.http.get<UserNameId>(`${this.url}/meeting/creator`,{params,headers:reqHeader});
   }
-  getNotInvited(meetingId:number){
-    const params = new HttpParams().set('userid',this.userid).set('taskId',meetingId);
+  getNotInvited(meetingId:number): Observable<People[]>{ 
+    const params = new HttpParams().set('userid',this.userid).set('meetingId',meetingId);
     const reqHeader = new HttpHeaders().set('Authorization',this.JWT_TOKEN);
 
-    return this.http.get<UserNameId>(`${this.url}/meeting/noninvited`,{params,headers:reqHeader});
+    return this.http.get<People[]>(`${this.url}/meeting/noninvited`,{params,headers:reqHeader});
     
   }
   getAllMeeting(){ 

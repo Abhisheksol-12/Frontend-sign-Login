@@ -106,9 +106,18 @@
         </div>
     </div>
     
-    <div class="row" style="margin-top: 25px;text-align: center;">
-        <button mat-raised-button color="primary"  (click)="addPeople()" routerLink="../update-task" >Add</button>
-     </div>
 
+    <div *ngIf="isValid;then task else meet"></div>
+        <ng-template #task>
+            <div class="row" style="margin-top: 25px;text-align: center;">
+                <button mat-raised-button color="primary" type="button" (click)="addPeople()" routerLink="../update-task" >Add</button>
+         </div>
+        </ng-template>
+        <ng-template #meet>
+            <div class="row" style="margin-top: 25px;text-align: center;">
+                <button mat-raised-button color="primary" type="button" (click)="addPeople()" routerLink="../update-meeting" >Add</button>
+        </div>
+        </ng-template>
+    
 
 </div>

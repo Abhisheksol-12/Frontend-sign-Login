@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { assigned, created } from '../models/AllTask';
+import { assigned, created } from '../models/AllTask'; 
 import { People } from '../models/People';
 
 @Injectable({
@@ -19,6 +19,16 @@ export class DataProviderService {
   private assigned_task:any;
 
   private show_created_task:any;
+
+  private isTaskRoute: any;
+
+  setRoute(isTask:boolean){
+    this.isTaskRoute = isTask;
+  }
+  getRoute(){
+    //console.log("get data provider"+this.isTaskRoute);
+    return this.isTaskRoute;
+  }
 
   constructor() { }
 

@@ -59,12 +59,15 @@
         </div>
     </div>
 
-<div class="row">
+<div class="row"> 
 
         <!-- Button trigger modal -->
- <button type="button" id="addUsers" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" >
+ <!-- <button type="button" id="addUsers" class="btn btn-primary" (click)="doPrepareSelectedPeopleComponant()" data-bs-toggle="modal" data-bs-target="#exampleModal1" >
     Add User
- </button>
+ </button> -->
+ <button type="button" id="addUsers" class="btn btn-primary"  (click)="moveToAddUser()" >
+  Add User
+</button>
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
@@ -108,9 +111,9 @@
     </div>
   </div>
 
-  <button type="button" id="addUsers" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Delete User
- </button>
+  <button type="button" id="addUsers" class="btn btn-primary" (click)="finalizeUsers()" >
+    Finalize Users
+  </button>
  <button type="button" (click)="updateDetails()" >Update details</button>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

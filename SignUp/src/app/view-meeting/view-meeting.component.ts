@@ -4,6 +4,7 @@ import { UserToMeeting } from '../models/UserToMeeting';
 import { AllMeetings, assigned, created } from '../models/AllMeeting';
 import { DeleteMeetingRequest } from '../models/DeleteMeetingRequest';
 import { DataProviderMeetService } from '../services/data-provider-meet.service';
+import { DataProviderService } from '../services/data-provider.service';
 
 
 @Component({
@@ -18,10 +19,11 @@ export class ViewMeetingComponent implements OnInit {
   //listTasks: tasks[] = [];
   assigned_meet:assigned[]=[];
   created_meet:created[]=[];
-  userid:any;
+  userid:any; 
   allMeeting!: AllMeetings;
 
-  constructor(private meetingService:MeetingService,private dataProviderMeeting:DataProviderMeetService) { }
+  constructor(private meetingService:MeetingService,private dataProviderMeeting:DataProviderMeetService,
+    private dataProvider:DataProviderService) { }
 
   ngOnInit(): void {
     this.getAllMeetings();

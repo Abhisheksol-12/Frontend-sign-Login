@@ -8,6 +8,7 @@ import { UserService } from '../services/user.service';
 import { AddTask } from '../models/AddTask';
 import { DeleteUserFromTask } from '../models/DeleteUserFromTask';
 import { UserToTask } from '../models/UserToTask';
+import { Route, Router } from '@angular/router';
 
 
 declare var window:any;
@@ -20,7 +21,7 @@ declare var window:any;
 export class UpdateTaskComponent implements OnInit {
 
   constructor(private dataProvider:DataProviderService,private datepipe: DatePipe,
-    private taskService:GetTasksService,private userService:UserService) { }
+    private taskService:GetTasksService,private userService:UserService,private router:Router) { }
   sideBarOpen: any;
   alert:boolean=false;
 
@@ -37,7 +38,7 @@ export class UpdateTaskComponent implements OnInit {
 
   
   leftUserList:any[]=[];
-  rightUserList:any[]=[];
+ // rightUserList:any[]=[];
   AllUserList:any[]=[];
 
   addUser:any[]=[];
@@ -78,6 +79,10 @@ export class UpdateTaskComponent implements OnInit {
 
 
   doPrepareSelectedPeopleComponant(){
+  }
+  moveToAddUser(){ 
+    this.dataProvider.setRoute(true);
+    this.router.navigate(['add-user']);
   }
 
   

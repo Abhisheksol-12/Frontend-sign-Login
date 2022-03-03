@@ -4,6 +4,11 @@ import { DataProviderMeetService } from '../services/data-provider-meet.service'
 import { created } from '../models/AllMeeting';
 import { AddMeeting } from '../models/AddMeeting';
 import { MeetingService } from '../services/meeting.service';
+import { UserService } from '../services/user.service';
+import { DataProviderService } from '../services/data-provider.service';
+import { DeleteUserFromMeeting } from '../models/DeleteUserFromMeeting';
+import { UserToMeeting } from '../models/UserToMeeting';
+import { Router } from '@angular/router';
 declare var window:any;
 
 @Component({ 
@@ -13,8 +18,10 @@ declare var window:any;
 })
 export class UpdateMeetingComponent implements OnInit {
   sideBarOpen:any;
+
   constructor(private datepipe: DatePipe,private dataProviderMeet:DataProviderMeetService,
-    private meetService:MeetingService) { }
+    private meetService:MeetingService,private userService : UserService,private dataProvider:DataProviderService,
+    private router:Router) { }
 
   formModal:any;
 
@@ -27,12 +34,17 @@ export class UpdateMeetingComponent implements OnInit {
   meet_date:any;
   meet_time:any;
 
+  leftUserList:any[]=[];
+ // rightUserList:any[]=[];
+  AllUserList:any[]=[];
+
+  addUser:any[]=[];
+  delUser:any[]=[];
+
   ngOnInit(): void {
     this.formModal=new window.bootstrap.Modal(
       document.getElementById("exampleModal1")
     );
-
-
     this.created_meet = this.dataProviderMeet.getDataForCreatedMeet();
     this.meet_purpose=this.created_meet.purpose;
     this.description=this.created_meet.description;
@@ -45,7 +57,80 @@ export class UpdateMeetingComponent implements OnInit {
     console.log("/////////////////");
     console.log(this.created_meet);
 
+    //get left list
+    this.getNotInvited(this.created_meet.meetingid);
+  
+    //get All user list
+    this.getAllUsers();
   }
+  moveToAddUser(){
+    this.dataProvider.setRoute(false);
+    this.router.navigate(['add-user']);
+  }
+
+  getAllUsers(){
+    let uname = sessionStorage.getItem('username');
+    let jwt = sessionStorage.getItem('token');
+    this.userService.getUser(uname,'Bearer '+jwt).subscribe(
+      (response)=>{
+        //console.log("All user response (2)==>");
+        this.AllUserList=response;
+        this.dataProvider.setAllList(this.AllUserList);
+
+        //console.log(this.AllUserList);
+      },(error)=>{
+        console.log(error);
+      }
+    );
+  }
+  getNotInvited(meetId:number){
+    this.meetService.getNotInvited(meetId).subscribe(
+      (response)=>{
+        //console.log("non-invitee (1)==> ");
+        this.leftUserList = response;
+        //console.log(this.leftUserList);
+
+        this.dataProvider.setSelectedList(this.leftUserList);
+      },(error) =>{
+        console.log(error);
+      }
+    );
+  }
+
+  finalizeUsers(){
+    this.addUser = this.dataProvider.getAddUser();
+    this.delUser = this.dataProvider.getDelUser();
+
+    for(let i = 0;i<this.delUser.length;i++){
+      let user = this.delUser[i];
+      let del_user = new DeleteUserFromMeeting();
+      del_user.meetingId = this.created_meet.meetingid;
+      del_user.userToBeDeleted = user.userId;
+      this.meetService.removeUser(del_user).subscribe(
+        (response)=>{
+          console.log(response);
+        },(error)=>{
+          console.log(error);
+        }
+      )
+    }
+
+    for(let i = 0;i<this.addUser.length;i++){
+      let user = this.addUser[i];
+      let add_user = new UserToMeeting();
+      add_user.meetingId = this.created_meet.meetingid;
+      add_user.userId = user.userId;
+      add_user.status = 'Not responded';
+      this.meetService.addUserToMeeting(add_user).subscribe(
+        (response)=>{
+          console.log(response);
+        },(error)=>{
+          console.log(error);
+        }
+      )
+    }
+  }
+
   updateDetails(){
     this.created_meet.purpose = this.meet_purpose;
     this.created_meet.description = this.description;

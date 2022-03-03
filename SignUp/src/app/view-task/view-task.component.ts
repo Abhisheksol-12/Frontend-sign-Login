@@ -121,7 +121,7 @@ export class ViewTaskComponent implements OnInit {
     );
   }
 
-  
+   
   moveDataForCreatedTask(created_task:created){
     console.log("edit click "+created_task.taskid);
     this.dataProvider.setDataForCreatedTask(created_task);

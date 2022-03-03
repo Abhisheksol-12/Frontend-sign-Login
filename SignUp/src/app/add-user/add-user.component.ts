@@ -12,7 +12,7 @@ import { DataProviderService } from '../services/data-provider.service';
 export class AddUserComponent implements OnInit {
 
   sideBarOpen: any;
-
+  isValid:any;
 
   dummy = 0;
   textChanged = new EventEmitter<string>();
@@ -42,6 +42,9 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllUsers();
+    this.isValid = this.dataProvider.getRoute();;
+    console.log("//////");
+    console.log(this.isValid);
   }
 
   dropItem(event: CdkDragDrop<any[]>) {

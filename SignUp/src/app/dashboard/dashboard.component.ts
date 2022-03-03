@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataProviderMeetService } from '../services/data-provider-meet.service';
+import { DataProviderService } from '../services/data-provider.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   sideBarOpen: any;
 
-  constructor() { }
+  constructor(private dataProvider:DataProviderService) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +24,6 @@ export class DashboardComponent implements OnInit {
   {
     alert("Thankyou for like..")
   }
+  
 
 }
