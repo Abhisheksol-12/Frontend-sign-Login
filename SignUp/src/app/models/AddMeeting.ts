@@ -1,5 +1,5 @@
 export class AddMeeting {
-    id : any;
+    id : any; 
     purpose : any;
     creator : any;
     place:any;

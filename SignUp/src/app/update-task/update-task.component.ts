@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { created } from '../models/AllTask';
-import { DatePipe } from '@angular/common'
+import { DatePipe } from '@angular/common';
 import { DataProviderService } from '../services/data-provider.service';
 import { People } from '../models/People';
 import { GetTasksService } from '../services/get-tasks.service';
@@ -49,7 +49,7 @@ export class UpdateTaskComponent implements OnInit {
     );
 
     this.created_task = this.dataProvider.getDataForCreatedTask();
-    this.task_title=this.created_task.title;
+    this.task_title = this.created_task.title;
     this.description=this.created_task.description;
 
     this.start_time=this.datepipe.transform(this.created_task.creationTime,'HH:mm');
@@ -185,6 +185,6 @@ export class UpdateTaskComponent implements OnInit {
     this.alert=false;
   }
 
-  
+   
 
 }

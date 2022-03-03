@@ -1,5 +1,5 @@
 
-<mat-drawer-container>
+<mat-drawer-container> 
 
   <mat-drawer mode="side" [opened]="sideBarOpen">
          <!-- <mat-drawer mode="side" opened="true"> -->
@@ -7,10 +7,8 @@
   </mat-drawer>
 
   <mat-drawer-content>
-
          <app-header (toggleSidebarForMe)="sideBarToggler()">
          </app-header>
-        
      <router-outlet>
        
 
@@ -19,14 +17,14 @@
     <div class="row">
         <mat-form-field class="half-row" appearance="outline">
             <mat-label>Meeting Title</mat-label>
-            <input matInput type="text" placeholder="Enter Task Name" required>
+            <input matInput type="text" placeholder="Enter Task Name" required [(ngModel)]="meet_purpose" >
         </mat-form-field>
     
 
    
         <mat-form-field class="half-row" appearance="outline">
             <mat-label>Description</mat-label>
-            <input matInput type="text" placeholder="Enter Description" required>
+            <input matInput type="text" placeholder="Enter Description" required [(ngModel)]="description">
         </mat-form-field>
     </div>
     <div class="row">
@@ -34,14 +32,14 @@
             <mat-form-field class="half-row" style="margin-right: 10px;" color="accent"
                 appearance="fill">
                 <mat-label>Start Date</mat-label>
-                <input matInput [matDatepicker]="picker1">
+                <input matInput [matDatepicker]="picker1" [(ngModel)]="creation_date">
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
 
             <mat-form-field class="half-row" appearance="fill">
                 <mat-label>start time</mat-label>
-                <input matInput type="time" placeholder="Enter start time">
+                <input matInput type="time" placeholder="Enter start time" [(ngModel)]="creation_time">
             </mat-form-field>
         </div>
         <div class="col">
@@ -49,14 +47,14 @@
             <mat-form-field class="half-row" style="margin-right: 10px;" color="accent"
                 appearance="fill">
                 <mat-label>Due Date</mat-label>
-                <input matInput [matDatepicker]="picker2">
+                <input matInput [matDatepicker]="picker2" [(ngModel)]="meet_date">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2 color="primary"></mat-datepicker>
             </mat-form-field>
 
             <mat-form-field class="half-row" appearance="fill">
                 <mat-label>due time</mat-label>
-                <input matInput type="time" placeholder="Enter due time">
+                <input matInput type="time" placeholder="Enter due time" [(ngModel)]="meet_time">
             </mat-form-field>
         </div>
     </div>
@@ -113,7 +111,7 @@
   <button type="button" id="addUsers" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">
     Delete User
  </button>
-  
+ <button type="button" (click)="updateDetails()" >Update details</button>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

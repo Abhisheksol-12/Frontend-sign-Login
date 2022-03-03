@@ -63,11 +63,7 @@ export class ViewTaskComponent implements OnInit {
   getAllTasks(){
     this.taskService.getAlltask().subscribe(
       (response)=>{
-        console.log(response);
         this.allTask = response;
-        console.log(this.allTask);
-        console.log(this.allTask.assigned[0]);
-        console.log(this.allTask.created[1]);
         this.assigned_task=this.allTask.assigned;
         this.created_task=this.allTask.created;
         

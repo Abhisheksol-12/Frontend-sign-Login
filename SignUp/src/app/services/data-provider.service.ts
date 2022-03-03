@@ -19,7 +19,6 @@ export class DataProviderService {
   private assigned_task:any;
 
   private show_created_task:any;
-  
 
   constructor() { }
 
@@ -82,6 +81,5 @@ export class DataProviderService {
   getDataForAssignedTask(){
     return this.assigned_task;
   }
-
 
 }
